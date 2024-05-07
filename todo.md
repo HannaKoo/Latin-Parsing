@@ -20,8 +20,37 @@ TODO: more of these later.
 
 MM
 trankit
-5 plain tb's
-4 merged: Classical, Late, Lame, Mega
+5 plain tb's:  
+- [ ] ittb
+- [ ] llct
+- [ ] perseus
+- [ ] proiel
+- [ ] udante
+
+4 merged:  
+
+[ ] Classical  
+- [x] perseus  
+- [ ] proiel  
+
+[ ] Lame 
+ - [ ] ittb
+ - [ ] llct
+ - [ ] udante  
+ - [ ] proiel  
+
+[ ] Late 
+ - [ ] ittb
+ - [ ] llct
+ - [/] udante  
+
+[ ] Mega
+ - [x] ittb
+ - [x] llct
+ - [x] perseus
+ - [x] proiel
+ - [x] udante
+
 
 `kupariha/trankit/MM_ MERG_` 5 + 4 = 9 kpl
 
@@ -40,6 +69,22 @@ kupariha/latin-stanza/MM_ITTB LLCT Perseus PROIEL
 7 kpl
 
 **Hunt and rename** the already done files(, or make new ones?)
+
+Renaming in bash:
+
+```bash
+# make a backup of the directory
+[kupariha@puhti-login11 Results]$ cp -a . ../Results.vara/
+# option -n 
+    # Do not make any changes.
+[kupariha@puhti-login11 Results]$ rename -nv test_output MM_Trankit-Mega *  
+`test_output_ittb.conllu' -> `MM_Trankit-Mega_ittb.conllu'
+`test_output_llct.conllu' -> `MM_Trankit-Mega_llct.conllu'
+`test_output_perseus.conllu' -> `MM_Trankit-Mega_perseus.conllu'
+`test_output_proiel.conllu' -> `MM_Trankit-Mega_proiel.conllu'
+`test_output_UDante.conllu' -> `MM_Trankit-Mega_UDante.conllu'
+[kupariha@puhti-login11 Results]$ 
+```
 
 ## Fix md tables
 
