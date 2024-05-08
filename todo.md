@@ -18,7 +18,7 @@ TODO: more of these later.
 
 #### Trankit
 
-Line breaks have been removed from the inputs for all of these, why? There are no `# text`'s.
+Line breaks have been removed from the inputs for all of these, why? There are even no `# text`'s to worry about.
 
 ```python
 # to solve the line breaks
@@ -66,24 +66,24 @@ Mega
 MM
 stanza
 5 plain tb's
- - [ ] ittb
- - [ ] llct
- - [ ] perseus
- - [ ] proiel  
- - [ ] udante  
+ - [/] ittb
+ - [/] llct
+ - [/] perseus
+ - [/] proiel  
+ - [/] udante  
 
 2 merged: Classical and Mega
 
 Classical  
-- [ ] perseus  
-- [ ] proiel  
+- [x] perseus  
+- [x] proiel  
 
 Mega
- - [ ] ittb
- - [ ] llct
- - [ ] perseus
- - [ ] proiel  
- - [ ] udante  
+ - [x] ittb
+ - [x] llct
+ - [x] perseus
+ - [x] proiel  
+ - [x] udante  
 
 
 
