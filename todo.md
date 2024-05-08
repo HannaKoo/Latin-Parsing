@@ -4,7 +4,9 @@
 
 #### File name format:  
 
-TB version | Model | tokenization | TB: test/GS
+TB version | Model     | TB: test/GS | tokenization
+-----------|-----------|-------------|-------------------
+MM / HM    |Stanza-Mega| LLCT        |pretokenized-Trankit
 
 **Done:**
 - (Stanza_classical_Trankit_pre_proiel_output.conllu)  
@@ -111,14 +113,28 @@ Renaming in bash:
 [kupariha@puhti-login11 Results]$ cp -a . ../Results.vara/
 # option -n 
     # Do not make any changes.
-[kupariha@puhti-login11 Results]$ rename -nv test_output MM_Trankit-Mega *  
+[kupariha@puhti-login11 Results]$ rename -nv test_output MM_Trankit-Mega *.conllu
 `test_output_ittb.conllu' -> `MM_Trankit-Mega_ittb.conllu'
 `test_output_llct.conllu' -> `MM_Trankit-Mega_llct.conllu'
 `test_output_perseus.conllu' -> `MM_Trankit-Mega_perseus.conllu'
 `test_output_proiel.conllu' -> `MM_Trankit-Mega_proiel.conllu'
 `test_output_UDante.conllu' -> `MM_Trankit-Mega_UDante.conllu'
-[kupariha@puhti-login11 Results]$ 
 ```
+
+## Use Trankit on the remaining cases
+
+--> trankit/use_trankit.py
+
+Get the input conllu from Latin-Variability
+
+cat > test.conllu
+
+conllu_to_text.pl > test.txt
+
+Does trankit need the line breaks removed? Probably.
+
+dict2conllu() / trankit2conllu() ?
+
 
 ## Fix md tables
 
