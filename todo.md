@@ -66,11 +66,19 @@ Mega
 MM
 stanza
 5 plain tb's
- - [/] ittb
- - [/] llct
- - [/] perseus
- - [/] proiel  
- - [/] udante  
+ - [x] ittb
+ - [x] llct
+ - [x] perseus
+ - [x] proiel  
+ - [x] udante  
+
+```bash
+[kupariha@puhti-login14 latin-stanza]$ mv MM_ITTB_slurm/Stanza_ittb_output.conllu ../Latin-Parsing/Results/conllu_files/MM_Stanza_ittb.conllu
+[kupariha@puhti-login14 latin-stanza]$ mv MM_LLCT/Stanza_llct_output.conllu ../Latin-Parsing/Results/conllu_files/MM_Stanza_llct.conllu
+[kupariha@puhti-login14 latin-stanza]$ mv MM_Perseus-stanza/Stanza_perseus_output.conllu ../Latin-Parsing/Results/conllu_files/MM_Stanza_perseus.conllu
+[kupariha@puhti-login14 latin-stanza]$ mv MM_PROIEL-stanza/Stanza_Proiel_output.conllu ../Latin-Parsing/Results/conllu_files/MM_Stanza_proiel.conllu
+[kupariha@puhti-login14 latin-stanza]$ cp ../../ehenriks/latin-stanza/Stanza_udante_output.conllu ../Latin-Parsing/Results/conllu_files/MM_Stanza_udante.conllu
+```
 
 2 merged: Classical and Mega
 
