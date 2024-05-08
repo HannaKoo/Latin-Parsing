@@ -39,18 +39,18 @@ trankit
 4 merged:  
 
 Classical  
-- [x] perseus  
-- [ ] proiel  
+- [x,s] perseus  
+- [s] proiel  
 
 [o] Lame 
- - [ ] ittb
- - [ ] llct
- - [ ] udante  
- - [ ] proiel  
+ - [s] ittb
+ - [s] llct
+ - [s] udante  
+ - [s] proiel  
 
 Late 
- - [ ] ittb
- - [ ] llct
+ - [s] ittb
+ - [s] llct
  - [x] udante  
 
 Mega
@@ -127,13 +127,22 @@ Renaming in bash:
 
 Get the input conllu from Latin-Variability
 
-cat > test.conllu
+`cat > test.conllu`  
+**Or** just read the conllu straight to perl.
 
-conllu_to_text.pl > test.txt
+`conllu_to_text.pl > test.txt`
 
-Does trankit need the line breaks removed? Probably.
+Does trankit need the line breaks removed? Probably.  
+– It does something without them.
 
-dict2conllu() / trankit2conllu() ?
+**Compare:**  
+MM_Trankit-Classical_perseus_linebreaks-replaced-w-space.conllu  
+MM_Trankit-Classical_perseus_slurm.conllu
+
+There are interesting differences in mwt's + some in tokenization and everywhere.
+
+dict2conllu() / trankit2conllu() ?  
+trankit first!
 
 
 ## Fix md tables
