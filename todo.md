@@ -36,22 +36,22 @@ trankit
 
 4 merged:  
 
-[ ] Classical  
+Classical  
 - [x] perseus  
 - [ ] proiel  
 
-[ ] Lame 
+[o] Lame 
  - [ ] ittb
  - [ ] llct
  - [ ] udante  
  - [ ] proiel  
 
-[ ] Late 
+Late 
  - [ ] ittb
  - [ ] llct
- - [/] udante  
+ - [x] udante  
 
-[ ] Mega
+Mega
  - [x] ittb
  - [x] llct
  - [x] perseus
@@ -66,7 +66,26 @@ trankit
 MM
 stanza
 5 plain tb's
+ - [ ] ittb
+ - [ ] llct
+ - [ ] perseus
+ - [ ] proiel  
+ - [ ] udante  
+
 2 merged: Classical and Mega
+
+Classical  
+- [ ] perseus  
+- [ ] proiel  
+
+Mega
+ - [ ] ittb
+ - [ ] llct
+ - [ ] perseus
+ - [ ] proiel  
+ - [ ] udante  
+
+
 
 ```
 ehenriks/latin-stanza/Stanza_udante_output.conllu
