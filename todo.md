@@ -9,8 +9,8 @@ TB version | Model | tokenization | TB: test/GS
 **Done:**
 - (Stanza_classical_Trankit_pre_proiel_output.conllu)  
   - (MM_Stanza-Classical_pretokenized-Trankit_Proiel.md)
-- MM_Stanza-Classical_pretokenized-Trankit_proiel.conllu
-  - MM_Stanza-Classical_pretokenized-Trankit_proiel.md
+- MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
+  - MM_Stanza-Classical_proiel_pretokenized-Trankit.md
 
 TODO: more of these later.
 
@@ -18,14 +18,21 @@ TODO: more of these later.
 
 #### Trankit
 
+Line breaks have been removed from the inputs for all of these, why? There are no `# text`'s.
+
+```python
+# to solve the line breaks
+doc = doc.replace("\n", " ")
+```
+
 MM
 trankit
 5 plain tb's:  
-- [ ] ittb
-- [ ] llct
-- [ ] perseus
-- [ ] proiel
-- [ ] udante
+- [x] ittb
+- [x] llct
+- [x] perseus
+- [x] proiel
+- [x] udante
 
 4 merged:  
 
