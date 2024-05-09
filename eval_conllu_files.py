@@ -16,7 +16,7 @@ wdir = pathlib.Path("Results/Evaluation_metrics")
 
 # case_sensitive requires Python 3.12!
 # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
-for conllu_file in rdir.glob('*ittb.conllu'):
+for conllu_file in rdir.glob('*.conllu'):
     wfile = (wdir/conllu_file.stem).with_suffix(".md")
     bank = str(conllu_file.stem).split('_')[2]
     print('bank', bank)
