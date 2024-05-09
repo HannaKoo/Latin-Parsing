@@ -146,7 +146,11 @@ trankit first!
 
 ## Make eval tables
 
+`eval_conllu_files.py` works!
 
+Now it writes the native eval `--+--`
+
+Should it write `|`-replaced .md or tsv or what? The `+` is at least easy to compare to the default output.
 
 
 ## Fix md tables
