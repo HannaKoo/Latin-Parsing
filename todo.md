@@ -96,7 +96,6 @@ Mega
  - [x] udante  
 
 
-
 ```
 ehenriks/latin-stanza/Stanza_udante_output.conllu
 kupariha/latin-stanza/MM_ITTB LLCT Perseus PROIEL
@@ -143,6 +142,11 @@ There are interesting differences in mwt's + some in tokenization and everywhere
 
 dict2conllu() / trankit2conllu() ?  
 trankit first!
+
+
+## Make eval tables
+
+
 
 
 ## Fix md tables
