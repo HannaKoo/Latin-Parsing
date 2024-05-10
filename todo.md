@@ -152,6 +152,10 @@ Now it writes the native eval `--+--`
 
 Should it write `|`-replaced .md or tsv or what? The `+` is at least easy to compare to the default output.
 
+### Notes
+
+linebreaks(slurm) vs nolinebreaks (MM_Trankit_Classical_perseus): No real difference in numbers, within 1 %.
+
 
 ## Fix md tables
 
