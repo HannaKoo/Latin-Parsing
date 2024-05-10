@@ -1,29 +1,50 @@
 # Based on auctoritate/Code/conllu-split-feats.py 2024-05-10
 
 # Collect and combine corresponding columns from different conllu-files for comparison.
-# Input files must have same tokenization and other line breaks 
-# (FIXME: mwt's differ! What to do?). 
+# - Input files must have same tokenization and other line breaks 
+#   - (FIXME: mwt's differ! What to do? Follow (only) ID's! 
+#   - Also some have "# text =" and some don't. Skip # lines.) 
 # Then split FEATS-column on '|'. Then split feats on '=' and make a dict.
+
 import pathlib
 import csv
 import re
 from collections import Counter
 from pprint import pprint
 
-wdir = pathlib.Path("Results/split-feats")  #FIXME
-rdir = pathlib.Path("Results/predicted")    #FIXME
-filename_pattern = "(.*)_gs-by-(.*)_.*"     #FIXME
-#                   ^^^^       ^^^^ = file id / origin, eg. stanza-ittb
+# ITTB: TrMegaITTB-StMegaPreITTB-CustomITTB
+# LLCT: TrMegaLLCT-StMegaPreLLCT-CustomLLCT
+# Perseus: TrMegaPerseus-StClassPrePerseus-CustomPerseus
+# PROIEL: TrMegaPRO-StClassPrePRO-CustomPRO
+# UDante: TrMegaUdante-StMegaPreUDante-CustomUDante
+
+todo = {
+        'ITTB': [['Trankit', 'Mega'], ['Stanza', 'Mega', 'pretokenized']], 
+        'LLCT': [['Trankit', 'Mega'], ['Stanza', 'Mega', 'pretokenized']],
+        
+        }
+
+wdir = pathlib.Path("Results/conllu_files")
+rdir = pathlib.Path("Results/conllu_files")
+rdir_je = pathlib.Path("../../jenna/latin-tagger-outputs")
+# MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
+filename_pattern_hm = "MM_(.*)_(.*)_.*"
+#                         ^^^^ ^^^^ = file id / origin, eg. Stanza-Mega ... ittb
+# jenna/latin-tagger-outputs/MM-la_proiel-ud-test.udtagger.conllu
+filename_pattern_je = "MM-la_(.*)-.*\.(.*)\.conllu"
+#                            ^^^^     ^^^^ = eg. proiel ... udtagger
+# Should this be lazy?
 
 def read_conllus(rdir, filename_pattern):
     # Read conllu files in rdir into a dict based data structure
-    # {'stanza-proiel': [{'ID': '1', 'FORM': 'Deinde', ...}, {...}], 'UDPipe2-udante': [{'ID': '1', 'FORM': 'Deinde', ...}, {...}], ...}
+    # FIXME:
+    # {'stanza-classical-proiel': [{'ID': '1', 'FORM': 'Deinde', ...}, {...}], 'UDPipe2-udante': [{'ID': '1', 'FORM': 'Deinde', ...}, {...}], ...}
     # {origin: [{header: value}]}
     #           ^^^^^^^^^^^^^^^ = row
     # Where row corresponds to the lines in the input and output files
     
-    files = list(rdir.iterdir())
-    # This reads all files in rdir.
+    files = list(rdir.iterdir()) + list(rdir_je.iterdir())
+    # This reads all files in rdir and rdir_je.
     # (TODO: put filename_pattern here (glob.glob? But that doesn't understand RE?)
     # Plan-B: test filename in the loop using RE. <-- FIXME: Do Plan-B)
 
@@ -32,14 +53,15 @@ def read_conllus(rdir, filename_pattern):
     p = re.compile(filename_pattern)
     for file in files:
         print("Reading  ", file)
-        m = p.match(file.stem)
-        origin = m.group(1) + '-' + m.group(2)
-        print("as", origin, "\n")
-        with open(file, 'r', newline='', encoding="utf8") as f:
-            reader = csv.DictReader(f, fieldnames=header, delimiter='\t')
-            data[origin] = []
-            for row in reader:
-                data[origin].append(row)
+        if todo in file:  # FIXME
+            m = p.match(file.stem)
+            origin = m.group(1) + '-' + m.group(2)
+            print("as", origin, "\n")
+            with open(file, 'r', newline='', encoding="utf8") as f:
+                reader = csv.DictReader(f, fieldnames=header, delimiter='\t')
+                data[origin] = []
+                for row in reader:
+                    data[origin].append(row)
     return data
 
 def split_feats(data):
@@ -62,6 +84,7 @@ def popularity_vote(data, line_nr):
     # Count most popular UPOS and its count on data line line_nr,
     # returns tuple (most popular UPOS, it's count).
     # if there are no UPOS, return (None, None).
+    # FIXME: line nr is a problem here, use ID instead, somehow.
     UPOSes = []
     for origin in data:
         UPOS = data[origin][line_nr]['UPOS']
@@ -72,7 +95,8 @@ def popularity_vote(data, line_nr):
     return Counter(UPOSes).most_common(1)[0]
 
 
-data = read_conllus(rdir, filename_pattern)
+data = read_conllus(rdir, filename_pattern_hm)
+read_conllus(rdir_je, filename_pattern_je)
 data, featkeys = split_feats(data)
 # TODO: Get rid of featkeys
 # Write a function to get feats from data.
