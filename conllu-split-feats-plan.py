@@ -33,5 +33,5 @@ for bank in todo:
     for file in rdir_je.glob('*' + bank.lower() + '*.conllu'):
         pass
 
-    # load all in variable data?
+    # load all in variable `data`?
 

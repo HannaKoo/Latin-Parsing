@@ -163,3 +163,22 @@ linebreaks(slurm) vs nolinebreaks (MM_Trankit_Classical_perseus): No real differ
 - Or perhaps `--+--` with `--|--` is safer?
 
 **But:** Does this help taking the data to tables? tsv, excel, ... ?
+
+
+## Vote
+
+- mkdir conllu_files/vote_ittb ... vote_udante/  
+- mv Trankit Stanza_pretokenized_fedback udtaggerCustom
+
+#### feedback.py  
+
+copy mwt and `# text =` back to stanza_pretokenized
+
+Nono! Trankit has mwt, Stanza has `# text =` !
+
+And, udtagger has different sentence tokenization! Custom_proiel has 
+15379 lines, Trankit-Mega_proiel_nolinebreaks has 15329 lines. So 
+50 more sentences are split in udtagger conllu? 
+Stanza-Classical_proiel_pretokenized-Trankit `# lines` removed has 15320 
+lines!
+
