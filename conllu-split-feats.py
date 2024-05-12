@@ -165,6 +165,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
     tsv_writer.writerow(writeheaders2)
 
     for i, row in enumerate(data['Custom_proiel']):
+        # It does not matter which origin to choose here, because line breaks match(?)
         # TODO: Implement popularity vote function (with option to change it).
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = [row['ID'], row['FORM'], UPOS_popular, UPOS_popularity] 
@@ -176,3 +177,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
                     else:
                         newrow.append('')  # insert placeholder for empty column
         tsv_writer.writerow(newrow)
+
+## TODO:
+# - Write a voted conllu.
+# - Vote on FEATS.
