@@ -1,3 +1,7 @@
+# Like conllu-split-feats.py, but load input files separately from
+# different places and different names based on a todo list (actually 
+# a dict).
+
 import pathlib
 import re
 

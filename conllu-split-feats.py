@@ -3,7 +3,8 @@
 # Collect and combine corresponding columns from different conllu-files for comparison.
 # - Input files must have same tokenization and other line breaks 
 #   - (FIXME: mwt's differ! What to do? Follow (only) ID's! 
-#   - Also some have "# text =" and some don't. Skip # lines.) 
+#   - Also some have "# text =" and some don't. Skip # lines.
+#   - Or prepare files beforehand: feedback.py) 
 # Then split FEATS-column on '|'. Then split feats on '=' and make a dict.
 
 import pathlib
@@ -24,14 +25,17 @@ todo = {
         
         }
 
+# wdir = pathlib.Path("Results/conllu_files")
 wdir = pathlib.Path("Results/conllu_files")
-rdir = pathlib.Path("Results/conllu_files")
-rdir_je = pathlib.Path("../../jenna/latin-tagger-outputs")
+# rdir = pathlib.Path("Results/conllu_files")
+rdir = pathlib.Path("Results/conllu_files/test_vote")
+# rdir_je = pathlib.Path("../../jenna/latin-tagger-outputs")
 # MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
-filename_pattern_hm = "MM_(.*)_(.*)_.*"
+# filename_pattern_hm = "MM_(.*)_(.*)_.*"
+filename_pattern = "MM_(.*)_(.*)_.*"
 #                         ^^^^ ^^^^ = file id / origin, eg. Stanza-Mega ... ittb
 # jenna/latin-tagger-outputs/MM-la_proiel-ud-test.udtagger.conllu
-filename_pattern_je = "MM-la_(.*)-.*\.(.*)\.conllu"
+# filename_pattern_je = "MM-la_(.*)-.*\.(.*)\.conllu"
 #                            ^^^^     ^^^^ = eg. proiel ... udtagger
 # Should this be lazy?
 
@@ -43,7 +47,7 @@ def read_conllus(rdir, filename_pattern):
     #           ^^^^^^^^^^^^^^^ = row
     # Where row corresponds to the lines in the input and output files
     
-    files = list(rdir.iterdir()) + list(rdir_je.iterdir())
+    files = list(rdir.iterdir())  # + list(rdir_je.iterdir())
     # This reads all files in rdir and rdir_je.
     # (TODO: put filename_pattern here (glob.glob? But that doesn't understand RE?)
     # Plan-B: test filename in the loop using RE. <-- FIXME: Do Plan-B)
@@ -53,15 +57,15 @@ def read_conllus(rdir, filename_pattern):
     p = re.compile(filename_pattern)
     for file in files:
         print("Reading  ", file)
-        if todo in file:  # FIXME
-            m = p.match(file.stem)
-            origin = m.group(1) + '-' + m.group(2)
-            print("as", origin, "\n")
-            with open(file, 'r', newline='', encoding="utf8") as f:
-                reader = csv.DictReader(f, fieldnames=header, delimiter='\t')
-                data[origin] = []
-                for row in reader:
-                    data[origin].append(row)
+    # if todo in file:  # FIXME
+        m = p.match(file.stem)
+        origin = m.group(1) + '-' + m.group(2)
+        print("as", origin, "\n")
+        with open(file, 'r', newline='', encoding="utf8") as f:
+            reader = csv.DictReader(f, fieldnames=header, delimiter='\t')
+            data[origin] = []
+            for row in reader:
+                data[origin].append(row)
     return data
 
 def split_feats(data):
@@ -95,8 +99,8 @@ def popularity_vote(data, line_nr):
     return Counter(UPOSes).most_common(1)[0]
 
 
-data = read_conllus(rdir, filename_pattern_hm)
-read_conllus(rdir_je, filename_pattern_je)
+data = read_conllus(rdir, filename_pattern)
+# read_conllus(rdir_je, filename_pattern_je)
 data, featkeys = split_feats(data)
 # TODO: Get rid of featkeys
 # Write a function to get feats from data.

@@ -230,6 +230,6 @@ udtagger 12096 lines vs Trankit-Mega 11995 lines
 
 -----------------------------------------------------------
 
-`test_vote/` includes 71 lines from the beginning of files plus a sentence towards the end with some words where `pos`s disagree completely.
+`test_vote/` includes 71 lines from the beginning of files plus a sentence towards the end with some words where `pos`s disagree completely, eg. contractarum.
 
 Tokenization is same on these.
