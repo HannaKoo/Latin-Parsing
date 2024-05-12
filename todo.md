@@ -176,9 +176,60 @@ copy mwt and `# text =` back to stanza_pretokenized
 
 Nono! Trankit has mwt, Stanza has `# text =` !
 
-And, udtagger has different sentence tokenization! Custom_proiel has 
+---------------------------------------------------
+
+And, udtagger has **different sentence tokenization**! Custom_proiel has 
 15379 lines, Trankit-Mega_proiel_nolinebreaks has 15329 lines. So 
 50 more sentences are split in udtagger conllu? 
+- No, there are differences both ways, 50 is netto.
+
 Stanza-Classical_proiel_pretokenized-Trankit `# lines` removed has 15320 
 lines!
+- This is due to the missing mwt lines, 9 kpl.
 
+Perseus also has similar differences in sentence tokenization.
+
+**And:**
+
+What's this **primum cessit** (perseus udtagger, line 152), it is split in Trankit-Mega_perseus_nolinebreaks
+
+
+```
+1	Ut	Ut	SCONJ	c--------	_	2	mark	_	_
+2	primum cessit	primum cessit	ADV	v3spia---	_	9	advcl	_	_
+3	furor	furor	NOUN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	_
+4	et	et	CCONJ	c--------	_	7	cc	_	_
+```
+
+line 224:
+```
+11	ad aethera	ad aethera	ADP	n-p---na-	_	9	obj	_	_
+12	virtus	virtus	NOUN	n-s---fn-	Case=Nom|Gender=Fem|Number=Sing	10	nsubj	_	_
+```
+
+line 319 has a mwt that is not in Trankit-Mega:
+```
+6	,	,	PUNCT	u--------	_	10	punct	_	_
+7-8	nec	_	_	_	_	_	_	_	_
+7	ne	ne	ADV	d--------	_	10	advmod	_	_
+8	c	que	CCONJ	c--------	_	10	cc	_	_
+9	duro	durus	ADJ	a-s---na-	Case=Abl|Gender=Neut|Number=Sing	12	amod	_	_
+```
+ditto l. 527
+
+556:
+```
+8	fuso crateres	fuso crateres	VERB	n-p---ma-	Aspect=Perf|Case=Abl|Gender=Masc|Number=Sing|VerbForm=Part|Voice=Pass	4	conj	_	_
+9	olivo	olivo	ADJ	n-s---nb-	Case=Abl|Gender=Neut|Number=Sing	2	obl	_	_
+10	.	.	PUNCT	u--------	_	2	punct	_	_
+```
+
+udtagger 12096 lines vs Trankit-Mega 11995 lines
+
+**It matches** MM_Trankit_perseus_test_output_nolinebreaks.conllu **!**
+
+-----------------------------------------------------------
+
+`test_vote/` includes 71 lines from the beginning of files plus a sentence towards the end with some words where `pos`s disagree completely.
+
+Tokenization is same on these.
