@@ -1,0 +1,372 @@
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur', 'Person': '3', 'PronType': 'Prs'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Polarity': 'Neg'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Rel'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'_': None}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Sing', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'VerbForm': 'Inf', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'Compound': 'Yes'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Plur'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '1', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Dat', 'Number': 'Plur', 'Person': '2', 'PronType': 'Prs'}
+{'Aspect': 'Perf', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Past', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Abl', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Acc', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Int'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'Person': '3', 'PronType': 'Prs'}
+{'NumForm': 'Word', 'NumType': 'Card'}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'VerbForm': 'Inf', 'Voice': 'Pass'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Dat', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Plur', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur', 'Person': '3', 'PronType': 'Prs'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Polarity': 'Neg'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Rel'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'_': None}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Sing', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'VerbForm': 'Inf', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'PronType': 'Rel'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Plur'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '1', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Dat', 'Number': 'Plur', 'Person': '2', 'PronType': 'Prs'}
+{'Aspect': 'Perf', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Past', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Acc', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Acc', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Int'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'Person': '3', 'PronType': 'Prs'}
+{'NumForm': 'Word', 'NumType': 'Card'}
+{'Case': 'Gen', 'Gender': 'Neut', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Neut', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Dat', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Plur', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur', 'Person': '3', 'PronType': 'Prs'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Polarity': 'Neg'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Masc', 'Number': 'Sing', 'Number[psor]': 'Plur', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Rel'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'_': None}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '2', 'Tense': 'Fut', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Imp', 'Number': 'Sing', 'Person': '2', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'VerbForm': 'Inf', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Acc', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'PronType': 'Rel'}
+{'Case': 'Nom', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Plur'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Plur'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '1', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Dat', 'Number': 'Plur', 'Person': '2', 'PronType': 'Prs'}
+{'Aspect': 'Perf', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Past', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Abl', 'Number': 'Sing', 'Person': '2', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Act'}
+{'Case': 'Acc', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'Case': 'Acc', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Int'}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Sub', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing', 'Number[psor]': 'Sing', 'Person[psor]': '2', 'Poss': 'Yes', 'PronType': 'Prs'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Sing', 'Person': '3', 'PronType': 'Prs'}
+{'NumForm': 'Word', 'NumType': 'Card'}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Case': 'Gen', 'Gender': 'Neut', 'Number': 'Sing'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Plur'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'Aspect': 'Prosp', 'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'_': None}
+{'Case': 'Acc', 'Gender': 'Neut', 'Number': 'Sing', 'Person[psor]': '3', 'Poss': 'Yes', 'PronType': 'Prs', 'Reflex': 'Yes'}
+{'Case': 'Dat', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Ind'}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur'}
+{'Aspect': 'Perf', 'Case': 'Gen', 'Gender': 'Fem', 'Number': 'Plur', 'VerbForm': 'Part', 'Voice': 'Pass'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'AdpType': 'Prep'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Masc', 'Number': 'Sing'}
+{'Case': 'Abl', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Neut', 'Number': 'Sing'}
+{'_': None}
+{'_': None}
+{'Case': 'Gen', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Tot'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Neut', 'Number': 'Plur', 'PronType': 'Rel'}
+{'_': None}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Plur', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Pass'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing'}
+{'AdpType': 'Prep'}
+{'Case': 'Abl', 'Gender': 'Masc', 'Number': 'Sing', 'PronType': 'Rel'}
+{'Aspect': 'Imp', 'Mood': 'Ind', 'Number': 'Sing', 'Person': '3', 'Tense': 'Pres', 'VerbForm': 'Fin', 'Voice': 'Act'}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}
+{'_': None}
+{'Case': 'Nom', 'Gender': 'Fem', 'Number': 'Sing'}

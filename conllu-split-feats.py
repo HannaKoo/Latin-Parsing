@@ -26,14 +26,14 @@ todo = {
         }
 
 # wdir = pathlib.Path("Results/conllu_files")
-wdir = pathlib.Path("Results/conllu_files")
+wdir = pathlib.Path("Results/conllu_files/test_output")
 # rdir = pathlib.Path("Results/conllu_files")
 rdir = pathlib.Path("Results/conllu_files/test_vote")
 # rdir_je = pathlib.Path("../../jenna/latin-tagger-outputs")
 # MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
 # filename_pattern_hm = "MM_(.*)_(.*)_.*"
-filename_pattern = "MM_(.*)_(.*)_.*"
-#                         ^^^^ ^^^^ = file id / origin, eg. Stanza-Mega ... ittb
+filename_pattern = "MM_(.*?)_(.*?)_.*"
+#                      ^^^^ ^^^^ = file id / origin, eg. Stanza-Mega ... ittb
 # jenna/latin-tagger-outputs/MM-la_proiel-ud-test.udtagger.conllu
 # filename_pattern_je = "MM-la_(.*)-.*\.(.*)\.conllu"
 #                            ^^^^     ^^^^ = eg. proiel ... udtagger
@@ -59,7 +59,7 @@ def read_conllus(rdir, filename_pattern):
         print("Reading  ", file)
     # if todo in file:  # FIXME
         m = p.match(file.stem)
-        origin = m.group(1) + '-' + m.group(2)
+        origin = m.group(1) + '_' + m.group(2)
         print("as", origin, "\n")
         with open(file, 'r', newline='', encoding="utf8") as f:
             reader = csv.DictReader(f, fieldnames=header, delimiter='\t')
@@ -88,7 +88,7 @@ def popularity_vote(data, line_nr):
     # Count most popular UPOS and its count on data line line_nr,
     # returns tuple (most popular UPOS, it's count).
     # if there are no UPOS, return (None, None).
-    # FIXME: line nr is a problem here, use ID instead, somehow.
+    # FIXME: If lines don't match, line nr is a problem here, use ID instead, somehow.
     UPOSes = []
     for origin in data:
         UPOS = data[origin][line_nr]['UPOS']
@@ -105,7 +105,8 @@ data, featkeys = split_feats(data)
 # TODO: Get rid of featkeys
 # Write a function to get feats from data.
 
-# example: The first non-empty FEATS is on line 10; This should print Abl.
+# example (from Auctoritate):
+# The first non-empty FEATS is on line 10; This should print Abl.
 # print(data['stanza-ittb'][10]['FEATS']['Case'])
 
 wdir.mkdir(parents=True, exist_ok=True)
@@ -140,7 +141,7 @@ include_POS = ['NOUN', 'PROPN', 'ADJ', 'VERB', 'DET', 'PRON', 'ADV', 'NUM']
 # TODO: List FEATS from these POS's only?
 
 writeheaders1 = ['ID', 'FORM', 'UPOS', 'pop']
-writeheaders2 = [''] * 4
+writeheaders2 = [''] * len(writeheaders1)
 
 # Put feats into a list for the first header line,
 # (and count the feats to include.)
@@ -163,7 +164,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
     tsv_writer.writerow(writeheaders1)
     tsv_writer.writerow(writeheaders2)
 
-    for i, row in enumerate(data['stanza-ittb']):
+    for i, row in enumerate(data['Custom_proiel']):
         # TODO: Implement popularity vote function (with option to change it).
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = [row['ID'], row['FORM'], UPOS_popular, UPOS_popularity] 

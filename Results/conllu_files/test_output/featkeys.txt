@@ -1,0 +1,2 @@
+featkeys: ['AdpType', 'Aspect', 'Case', 'Compound', 'Gender', 'Mood', 'NumForm', 'NumType', 'Number', 'Number[psor]', 'Person', 'Person[psor]', 'Polarity', 'Poss', 'PronType', 'Reflex', 'Tense', 'VerbForm', 'Voice']
+len: 19

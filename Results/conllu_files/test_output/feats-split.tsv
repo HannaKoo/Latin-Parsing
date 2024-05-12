@@ -1,0 +1,126 @@
+ID	FORM	UPOS	pop	Case	Case	Case	Gender	Gender	Gender	Number	Number	Number	Degree	Degree	Degree	Aspect	Aspect	Aspect	Mood	Mood	Mood	Tense	Tense	Tense	Voice	Voice	Voice	VerbForm	VerbForm	VerbForm	Person	Person	Person
+				Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel	Custom_proiel	Stanza-Classical_proiel	Trankit-Mega_proiel
+1	adtendite	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Imp	Imp	Imp	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	2	2	2
+2	ne	SCONJ	3																														
+3	iustitiam	NOUN	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+4	vestram	DET	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+5	faciatis	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	2	2	2
+6	coram	ADP	3																														
+7	hominibus	NOUN	3	Abl	Abl	Abl	Masc	Masc	Masc	Plur	Plur	Plur																					
+8	ut	SCONJ	3																														
+9	videamini	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres	Pass	Pass	Pass	Fin	Fin	Fin	2	2	2
+10	ab	ADP	3																														
+11	eis	PRON	3	Abl	Abl	Abl	Masc	Masc	Masc	Plur	Plur	Plur																			3	3	3
+1	alioquin	ADV	3																														
+2	mercedem	NOUN	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+3	non	PART	3																														
+4	habebitis	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Ind	Ind	Ind	Fut	Fut	Fut	Act	Act	Act	Fin	Fin	Fin	2	2	2
+5	apud	ADP	3																														
+6	Patrem	NOUN	3	Acc	Acc	Acc	Masc	Masc	Masc	Sing	Sing	Sing																					
+7	vestrum	DET	3	Acc	Acc	Acc	Masc	Masc	Masc	Sing	Sing	Sing																					
+8	qui	PRON	3	Nom	Nom	Nom	Masc	Masc	Masc	Sing	Sing	Sing																					
+9	in	ADP	3																														
+10	caelis	NOUN	3	Abl	Abl	Abl	Neut	Neut	Neut	Plur	Plur	Plur																					
+11	est	AUX	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres				Fin	Fin	Fin	3	3	3
+1	cum	SCONJ	3																														
+2	ergo	ADV	3																														
+3	facies	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Fut	Fut	Fut	Act	Act	Act	Fin	Fin	Fin	2	2	2
+4	elemosynam	NOUN	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+5	noli	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Imp	Imp	Imp	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	2	2	2
+6	tuba	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+7	canere	VERB	3													Imp	Imp	Imp							Act	Act	Act	Inf	Inf	Inf			
+8	ante	ADP	3																														
+9	te	PRON	3	Acc	Acc	Acc				Sing	Sing	Sing																			2	2	2
+10	sicut	SCONJ	3																														
+11	hypocritae	NOUN	3	Nom	Nom	Nom	Masc	Masc	Masc	Plur	Plur	Plur																					
+12	faciunt	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	3	3	3
+13	in	ADP	3																														
+14	synagogis	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Plur	Plur	Plur																					
+15	et	CCONJ	3																														
+16	in	ADP	3																														
+17	vicis	NOUN	3	Abl	Abl	Abl	Fem	Neut	Masc	Plur	Plur	Plur																					
+18	ut	SCONJ	3																														
+19	honorificentur	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres	Pass	Pass	Pass	Fin	Fin	Fin	3	3	3
+20	ab	ADP	3																														
+21	hominibus	NOUN	3	Abl	Abl	Abl	Masc	Masc	Masc	Plur	Plur	Plur																					
+1	amen	INTJ	3																														
+2	dico	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	1	1	1
+3	vobis	PRON	3	Dat	Dat	Dat				Plur	Plur	Plur																			2	2	2
+1	receperunt	VERB	3							Plur	Plur	Plur				Perf	Perf	Perf	Ind	Ind	Ind	Past	Past	Past	Act	Act	Act	Fin	Fin	Fin	3	3	3
+2	mercedem	NOUN	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+3	suam	DET	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+1	te	PRON	3	Abl	Acc	Abl				Sing	Sing	Sing																			2	2	2
+2	autem	PART	3																														
+3	faciente	VERB	3	Abl	Abl	Abl	Masc	Masc	Masc	Sing	Sing	Sing				Imp	Imp	Imp							Act	Act	Act	Part	Part	Part			
+4	elemosynam	NOUN	3	Acc	Acc	Acc	Fem	Fem	Fem	Sing	Sing	Sing																					
+5	nesciat	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	3	3	3
+6	sinistra	NOUN	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+7	tua	DET	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+8	quid	PRON	3	Acc	Acc	Acc	Neut	Neut	Neut	Sing	Sing	Sing																					
+9	faciat	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	3	3	3
+10	dextera	ADJ	2	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+11	tua	DET	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+12	ut	SCONJ	3																														
+13	sit	AUX	3							Sing	Sing	Sing				Imp	Imp	Imp	Sub	Sub	Sub	Pres	Pres	Pres				Fin	Fin	Fin	3	3	3
+14	elemosyna	NOUN	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+15	tua	DET	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+16	in	ADP	3																														
+17	abscondito	ADJ	2	Abl	Abl	Abl	Masc	Masc	Neut	Sing	Sing	Sing																					
+1	Sed	CCONJ	3																														
+2	omne	DET	3	Nom	Nom	Nom	Neut	Neut	Neut	Sing	Sing	Sing																					
+3	quod	PRON	3	Nom	Nom	Nom	Neut	Neut	Neut	Sing	Sing	Sing																					
+4	est	AUX	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres				Fin	Fin	Fin	3	3	3
+5	honestum	ADJ	3	Nom	Nom	Nom	Neut	Neut	Neut	Sing	Sing	Sing																					
+6	id	PRON	3	Nom	Nom	Nom	Neut	Neut	Neut	Sing	Sing	Sing																			3	3	3
+7	quattuor	NUM	3																														
+8	partium	NOUN	3	Gen	Gen	Gen	Fem	Neut	Fem	Plur	Plur	Plur																					
+9	oritur	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Pass	Pass	Pass	Fin	Fin	Fin	3	3	3
+10	ex	ADP	3																														
+11	aliqua	PRON	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+12	aut	CCONJ	3																														
+13	enim	PART	3																														
+14	in	ADP	3																														
+15	perspicientia	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+16	veri	VERB	1		Gen	Gen		Fem	Neut		Sing	Sing				Imp									Pass			Inf					
+17	sollertia	NOUN	3	Abl	Nom	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+18	que	CCONJ	3																														
+19	versatur	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Pass	Pass	Pass	Fin	Fin	Fin	3	3	3
+20	aut	CCONJ	3																														
+21	in	ADP	3																														
+22	hominum	NOUN	3	Gen	Gen	Gen	Masc	Masc	Masc	Plur	Plur	Plur																					
+23	societate	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+24	tuenda	VERB	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing				Prosp	Prosp	Prosp							Pass	Pass	Pass	Part	Part	Part			
+25	tribuendo	VERB	3	Abl	Abl	Abl	Neut	Neut	Neut	Sing	Sing	Sing				Prosp	Prosp	Prosp							Pass	Pass	Pass	Part	Part	Part			
+26	que	CCONJ	3																														
+27	suum	DET	3	Acc	Acc	Acc	Masc	Neut	Neut	Sing	Sing	Sing																					
+28	cuique	DET	3	Dat	Dat	Dat	Masc	Masc	Masc	Sing	Sing	Sing																					
+29	et	CCONJ	3																														
+30	rerum	NOUN	3	Gen	Gen	Gen	Fem	Fem	Fem	Plur	Plur	Plur																					
+31	contractarum	ADJ	1	Gen	Gen	Gen	Fem	Fem	Fem	Plur	Plur	Plur						Perf									Pass			Part			
+32	fide	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+33	aut	CCONJ	3																														
+34	in	ADP	3																														
+35	animi	NOUN	3	Gen	Gen	Gen	Masc	Masc	Masc	Sing	Sing	Sing																					
+36	excelsi	ADJ	2	Gen	Gen	Gen	Masc	Masc	Masc	Sing	Sing	Sing																					
+37	atque	CCONJ	3																														
+38	invicti	ADJ	2		Gen	Gen		Masc	Masc		Sing	Sing																					
+39	magnitudine	NOUN	3	Abl	Abl	Abl	Fem	Fem	Fem	Sing	Sing	Sing																					
+40	ac	CCONJ	3																														
+41	robore	NOUN	3	Abl	Abl	Abl	Masc	Neut	Neut	Sing	Sing	Sing																					
+42	aut	CCONJ	3																														
+43	in	ADP	3																														
+44	omnium	DET	3	Gen	Gen	Gen	Masc	Masc	Neut	Plur	Plur	Plur																					
+45	quae	PRON	3	Nom	Nom	Nom	Neut	Neut	Neut	Plur	Plur	Plur																					
+46	fiunt	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	3	3	3
+47	quae	PRON	3	Nom	Nom	Nom	Neut	Neut	Neut	Plur	Plur	Plur																					
+48	que	CCONJ	3																														
+49	dicuntur	VERB	3							Plur	Plur	Plur				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Pass	Pass	Pass	Fin	Fin	Fin	3	3	3
+50	ordine	NOUN	3	Abl	Abl	Abl	Masc	Masc	Masc	Sing	Sing	Sing																					
+51	et	CCONJ	3																														
+52	modo	NOUN	3	Abl	Abl	Abl	Masc	Masc	Masc	Sing	Sing	Sing																					
+53	in	ADP	3																														
+54	quo	PRON	3	Abl	Abl	Abl	Masc	Neut	Masc	Sing	Sing	Sing																					
+55	inest	VERB	3							Sing	Sing	Sing				Imp	Imp	Imp	Ind	Ind	Ind	Pres	Pres	Pres	Act	Act	Act	Fin	Fin	Fin	3	3	3
+56	modestia	NOUN	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
+57	et	CCONJ	3																														
+58	temperantia	NOUN	3	Nom	Nom	Nom	Fem	Fem	Fem	Sing	Sing	Sing																					
