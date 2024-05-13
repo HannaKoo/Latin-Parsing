@@ -162,7 +162,7 @@ linebreaks(slurm) vs nolinebreaks (MM_Trankit_Classical_perseus): No real differ
 - Replace `+` with `|`
 - Or perhaps `--+--` with `--|--` is safer?
 
-**But:** Does this help taking the data to tables? tsv, excel, ... ?
+**But:** Does this help taking the data to tables? tsv, excel, LaTeX,  ... ?
 
 
 ## Vote
