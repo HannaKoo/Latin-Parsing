@@ -185,6 +185,7 @@ with open(wdir/'MM_voted_proiel_short.conllu', 'w', newline='', encoding='utf8')
         for head in header:
             # if head == 'UPOS', 'FEATS': actually vote!
             newrow.append(data[origin][i][head])
+            # Seems to write Trankit-Mega
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
     # BUG(s): Missing empty lines between sentences, FEATS print as dicts.
