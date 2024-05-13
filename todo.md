@@ -14,7 +14,7 @@ MM / HM    |Stanza-Mega| LLCT        |pretokenized-Trankit
 - MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
   - MM_Stanza-Classical_proiel_pretokenized-Trankit.md
 
-TODO: more of these later.
+TODO: more of these later. ... DONE.
 
 ### w/o pretokenized:
 
@@ -155,6 +155,18 @@ Should it write `|`-replaced .md or tsv or what? The `+` is at least easy to com
 ### Notes
 
 linebreaks(slurm) vs nolinebreaks (MM_Trankit_Classical_perseus): No real difference in numbers, within 1 %.
+
+Replace `#...` lines:  
+`#.*\n`  
+perseus 1720 removed
+
+ittb 4256 removed
+
+llct 1776 removed
+
+udante 908 removed
+
+(proiel done earlier).
 
 
 ## Fix md tables
