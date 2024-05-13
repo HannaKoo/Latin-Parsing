@@ -36,7 +36,7 @@ trankit
 - [x] proiel
 - [x] udante
 
-4 merged:  
+##### 4 merged:  
 
 Classical  
 - [x,s] perseus  
@@ -102,6 +102,9 @@ kupariha/latin-stanza/MM_ITTB LLCT Perseus PROIEL
       --,,--         /MM_classical ja megawombatti
 ```
 7 kpl
+
+udtagger: 5 kpl
+
 
 **Hunt and rename** the already done files(, or make new ones?)
 

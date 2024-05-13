@@ -1,0 +1,6 @@
+ModelName	Tokens	UPOS	UFeats	Lemmas	UAS	LAS
+MM_Trankit_ittb_test	     99.99 	     98.99 	     97.52 	     97.63 	     92.09 	     90.71 
+MM_Trankit_llct_test	     99.99 	     99.66 	     97.36 	     96.50 	     96.15 	     95.37 
+MM_Trankit_perseus_test	     99.46 	     88.90 	     77.98 	     63.99 	     74.08 	     66.97 
+MM_Trankit_proiel_test	     99.87 	     97.29 	     92.77 	     89.37 	     84.09 	     80.97 
+MM_Trankit_udante_test	     99.50 	     91.17 	     80.71 	     73.89 	     75.92 	     68.65 
