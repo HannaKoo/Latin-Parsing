@@ -19,7 +19,7 @@ data = []
 with open(wdir/'eval_table.tsv', 'w', newline='') as f:
     tsv_writer = csv.writer(f, delimiter='\t')
     tsv_writer.writerow(include)
-    for file in rdir.glob('MM_Trankit_*.md'):
+    for file in rdir.iterdir():
         f1s = []
         with open(file, 'r') as f:
             print( '_'.join( file.stem.split('_')[0:4] ) )
