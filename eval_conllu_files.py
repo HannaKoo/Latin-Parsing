@@ -11,7 +11,7 @@ ud_tools = "/projappl/project_2008402/tools/"
 MM_golds = pathlib.Path("../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks")
 
 # Results/conllu_files/*.conllu
-rdir = pathlib.Path("Results/conllu_files")
+rdir = pathlib.Path("Results/conllu_files/raw_pretokenized")
 wdir = pathlib.Path("Results/Evaluation_metrics")
 
 # case_sensitive requires Python 3.12!
@@ -25,7 +25,7 @@ for conllu_file in rdir.glob('*.conllu'):
     # for gold_subdir in MM_golds.glob('*' + bank, case_sensitive=False):
     for gold_subdir in MM_golds.iterdir():
         print(gold_subdir)
-        if str(gold_subdir)[-len(bank):].lower() == bank:
+        if str(gold_subdir).lower().endswith(bank):
             # Should match only one dir, is there a smart way to do this?
             print(gold_subdir, bank)
             gold_standard = gold_subdir/("MM-la_" + bank + "-ud-test.conllu")
