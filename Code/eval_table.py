@@ -19,11 +19,12 @@ data = []
 with open(wdir/'eval_table.tsv', 'w', newline='') as f:
     tsv_writer = csv.writer(f, delimiter='\t')
     tsv_writer.writerow(include)
-    for file in rdir.iterdir():
+    for file in rdir.glob('*.md'):
         f1s = []
         with open(file, 'r') as f:
             print( '_'.join( file.stem.split('_')[0:4] ) )
-            f1s.append( '_'.join( file.stem.split('_')[0:4] ) )
+            # f1s.append( '_'.join( file.stem.split('_')[0:4] ) )
+            f1s.append(file.stem)
             single = list(f)
             pprint(single)
             for row in single:
