@@ -79,7 +79,7 @@
 13	enim	enim	PART	Df	_	19	discourse	_	_
 14	in	in	ADP	R-	AdpType=Prep	15	case	_	_
 15	perspicientia	perspicientia	NOUN	Nb	Case=Abl|Gender=Fem|Number=Sing	19	obl	_	_
-16	veri	verus	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	15	nmod	_	_
+16	veri	verus	VERB	Nb	Case=Gen|Gender=Neut|Number=Sing	15	nmod	_	_
 17	sollertia	sollertia	NOUN	Nb	Case=Abl|Gender=Fem|Number=Sing	15	conj	_	_
 18	que	que	CCONJ	C-	_	17	cc	_	_
 19	versatur	verso	VERB	V-	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	9	conj	_	_
@@ -94,7 +94,7 @@
 28	cuique	quisque	DET	Px	Case=Dat|Gender=Masc|Number=Sing|PronType=Ind	25	obl:arg	_	_
 29	et	et	CCONJ	C-	_	32	cc	_	_
 30	rerum	res	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	32	nmod	_	_
-31	contractarum	contractarum	VERB	V-	Aspect=Perf|Case=Gen|Gender=Fem|Number=Plur|VerbForm=Part|Voice=Pass	30	acl	_	_
+31	contractarum	contractarum	ADJ	V-	Aspect=Perf|Case=Gen|Gender=Fem|Number=Plur|VerbForm=Part|Voice=Pass	30	acl	_	_
 32	fide	fides	NOUN	Nb	Case=Abl|Gender=Fem|Number=Sing	25	obl	_	_
 33	aut	aut	CCONJ	C-	_	39	cc	_	_
 34	in	in	ADP	R-	AdpType=Prep	39	case	_	_

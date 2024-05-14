@@ -194,8 +194,9 @@ with open(wdir/'MM_voted_proiel_short.conllu', 'w', newline='', encoding='utf8')
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
-            # if head == 'UPOS', 'FEATS': actually vote!
-            if head == 'FEATS':
+            if head == 'UPOS':
+                newrow.append(UPOS_popular)
+            elif head == 'FEATS':
                 newrow.append(join_feats(data[origin][i][head]))
             else:
                 newrow.append(data[origin][i][head])
