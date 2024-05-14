@@ -82,6 +82,10 @@ def split_feats(data):
     return data, featkeys
 
 def join_feats(feat_dict):
+    # Turn a feats dict back into a string,
+    # if feats is 'FEATS': {'_': None}, return '_'.
+    if feat_dict == {'_': None}:
+        return '_'
     feat_list = []
     for feat in feat_dict:
         feat_list.append(feat + '=' + feat_dict[feat])
