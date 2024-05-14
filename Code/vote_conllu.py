@@ -32,8 +32,14 @@ todo = {
         
         }
 
+bank = 'ittb'
+# bank = 'llct'
+# bank = 'perseus'
+# bank = 'proiel' 
+# bank = 'udante'
+
 wdir = pathlib.Path("Results/conllu_files/test_output")
-rdir = pathlib.Path("Results/conllu_files/test_vote")  # Note: test data has no mwt!
+rdir = pathlib.Path("Results/conllu_files/vote_" + bank)  # Note: short test data has no mwt!
 # MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
 filename_pattern = "MM_(.*?)_(.*?)_.*"
 #                       ^^^   ^^^ = file id / origin, eg. Stanza-Mega_ittb
@@ -83,19 +89,20 @@ def split_feats(data):
 
 def join_feats(feat_dict):
     # Turn a feats dict back into a string,
-    # if feats is 'FEATS': {'_': None}, return '_'.
+    
     if feat_dict == {'_': None}:
         return '_'
+    
     feat_list = []
     for feat in feat_dict:
         feat_list.append(feat + '=' + feat_dict[feat])
-    feats_str = '|'.join(feat_list)
-    return feats_str
+    return '|'.join(feat_list)
 
 def popularity_vote(data, line_nr):
     # Count most popular UPOS and its count on data line line_nr,
     # returns tuple (most popular UPOS, it's count).
     # if there are no UPOS, return (None, None).
+    # TODO: Which origins is the winner from?
     UPOSes = []
     for origin in data:
         UPOS = data[origin][line_nr]['UPOS']
@@ -103,7 +110,7 @@ def popularity_vote(data, line_nr):
             UPOSes.append(UPOS)
         if UPOSes == []:
             return None, None
-    return Counter(UPOSes).most_common(1)[0]
+    return Counter(UPOSes).most_common(1)[0]  # , best_origin
 
 
 data = read_conllus(rdir, filename_pattern)
@@ -170,9 +177,9 @@ with wfile.open('w', newline='', encoding='utf8') as f:
     tsv_writer.writerow(writeheaders1)
     tsv_writer.writerow(writeheaders2)
 
-    for i, row in enumerate(data['Custom_proiel']):
-        # It does not matter which origin to choose here, because line breaks match(?)
-        # TODO: Implement popularity vote function (with option to change it).
+    for i, row in enumerate(data['udtagger_' + bank]):
+        # It does not matter which ^^origin^^ to choose here, because
+        # line breaks, ID and FORM match(?)
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = [row['ID'], row['FORM'], UPOS_popular, UPOS_popularity] 
         for j in include_feats:
@@ -185,12 +192,11 @@ with wfile.open('w', newline='', encoding='utf8') as f:
         tsv_writer.writerow(newrow)
 
 ## TODO:
-# - Write a voted conllu.
 # (- Vote on FEATS.)
 
-with open(wdir/'MM_voted_proiel_short.conllu', 'w', newline='', encoding='utf8') as f_voted:
+with open(wdir/('MM_voted_' + bank + '_nosentsplit.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
-    for i, row in enumerate(data['Custom_proiel']):
+    for i, row in enumerate(data['udtagger_' + bank]):
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
