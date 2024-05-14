@@ -42,9 +42,9 @@ todo = {
         
         }
 
-bank = 'ittb'
+# bank = 'ittb'
 # bank = 'llct'
-# bank = 'perseus'
+bank = 'perseus'
 # bank = 'proiel' 
 # bank = 'udante'
 
@@ -134,7 +134,7 @@ data, featkeys = split_feats(data)
 
 wdir.mkdir(parents=True, exist_ok=True)
 
-with open(wdir/'feats.txt', 'w', encoding='utf8') as f_feats:
+with open(wdir/('feats_' + bank + '.txt'), 'w', encoding='utf8') as f_feats:
     feats = {}
     for origin in data:
         feats[origin] = []
@@ -143,12 +143,12 @@ with open(wdir/'feats.txt', 'w', encoding='utf8') as f_feats:
                 f_feats.write(str(row['FEATS']) + '\n')
                 # (Separating key and value with '=' looked clearer than this dict-look)
 
-with open(wdir/'featkeys.txt', 'w', encoding='utf8') as f_featkeys:
+with open(wdir/('featkeys_' + bank + '.txt'), 'w', encoding='utf8') as f_featkeys:
     # Print featkeys sorted, so it does not change with every run and confuse git.
     f_featkeys.write("featkeys: " + str(sorted(featkeys)) + "\n")
     f_featkeys.write("len: " + str(len(featkeys)))
 
-with open(wdir/'data.txt', 'w', encoding='utf8') as f_data:
+with open(wdir/('data_' + bank + '.txt'), 'w', encoding='utf8') as f_data:
     pprint(data, width=100, stream=f_data, sort_dicts=False)
     # f_data.write(str(data))
 
@@ -181,7 +181,7 @@ for origin in data:
 # writeheaders2.extend( origins * num_feats )
 writeheaders2.extend( origins * len(include_feats) )
 
-wfile = (wdir/"feats-split.tsv")
+wfile = wdir/('feats-split_' + bank + '.tsv')
 with wfile.open('w', newline='', encoding='utf8') as f:
     tsv_writer = csv.writer(f, delimiter='\t')
     tsv_writer.writerow(writeheaders1)
@@ -211,10 +211,12 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
         if row['ID'].startswith('1-') and i != 0:  # sentence begins with mwt
             vote_writer.writerow('')
             skipnext = True
-        if row['ID'] == '1' and i != 0 and not skipnext:
-            vote_writer.writerow('')
-            skipnext = False
-            
+        if row['ID'] == '1' and i != 0:
+            if skipnext:
+                skipnext = False
+            else:
+                vote_writer.writerow('')
+
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
@@ -228,8 +230,6 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
     vote_writer.writerow('')
-    # BUG(s): 
-    # - When mwt 1-x
 
 # Fix missing empty lines regex:
 # \n1\t
