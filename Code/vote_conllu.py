@@ -81,6 +81,13 @@ def split_feats(data):
                         row['FEATS'][key] = value
     return data, featkeys
 
+def join_feats(feat_dict):
+    feat_list = []
+    for feat in feat_dict:
+        feat_list.append(feat + '=' + feat_dict[feat])
+    feats_str = '|'.join(feat_list)
+    return feats_str
+
 def popularity_vote(data, line_nr):
     # Count most popular UPOS and its count on data line line_nr,
     # returns tuple (most popular UPOS, it's count).
@@ -184,7 +191,10 @@ with open(wdir/'MM_voted_proiel_short.conllu', 'w', newline='', encoding='utf8')
         newrow = []
         for head in header:
             # if head == 'UPOS', 'FEATS': actually vote!
-            newrow.append(data[origin][i][head])
+            if head == 'FEATS':
+                newrow.append(join_feats(data[origin][i][head]))
+            else:
+                newrow.append(data[origin][i][head])
             # Seems to write Trankit-Mega
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
