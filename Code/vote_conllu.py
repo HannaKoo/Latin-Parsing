@@ -42,9 +42,9 @@ todo = {
         
         }
 
-# bank = 'ittb'
+bank = 'ittb'  # based on udtagger
 # bank = 'llct'
-bank = 'perseus'
+# bank = 'perseus'  # based on udtagger
 # bank = 'proiel' 
 # bank = 'udante'
 
