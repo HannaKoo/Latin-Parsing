@@ -207,7 +207,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
     for i, row in enumerate(data['udtagger_' + bank]):
-        if row['ID'] == '1':
+        if row['ID'] == '1' and i != 0:
             vote_writer.writerow('')
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
@@ -221,9 +221,8 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
             # Seems to write Trankit-Mega
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
+    vote_writer.writerow('')
     # BUG(s): 
-    # - Empty line at beginning
-    # - Empty line missing from end.
     # - When mwt 1-x
 
 # Fix missing empty lines regex:
