@@ -3,16 +3,26 @@
 # Collect and combine corresponding columns from different conllu-files for comparison.
 # - Input files must have same tokenization and other line breaks 
 #   - (FIXME: mwt's differ! What to do? Follow (only) ID's!)
-#   - (Also some have "# text =" and some don't. Skip # lines.
+#   - (Also some have "# text =" and some don't. Skip # lines.)
 #   - Or prepare files beforehand: feedback.py!
 # Then split FEATS-column on '|'. Then split feats on '=' and make a dict.
 
 # Write a new conllu file with voted UPOS (and FEATS?).
+# Should we take LEMMA from Stanza?
 
 # Difference:
 # - Earlier we wanted to split feats, but now we might just copy them
 # verbatim to the result conllu?
 # - We might want to vote on FEATS features, when everyone agrees on POS.
+
+# Voting cases:
+# - three different UPOSes: Pick UPOS and FEATS from Trankit (and the whole line preferably?)
+# - 2 vs 1: Pick winning UPOS, and select corresponding FEATS in order (of what's left): 
+#  1. trankit -> If it's Trankit, take the whole line from there.
+#  2. udtagger -> 
+#  3. stanza (i.e. Never pick Stanza!)
+# - three same UPOSes: Vote FEATS: as a whole or individual FEATs.
+
 
 import pathlib
 import csv
@@ -194,9 +204,11 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 ## TODO:
 # (- Vote on FEATS.)
 
-with open(wdir/('MM_voted_' + bank + '_nosentsplit.conllu'), 'w', newline='', encoding='utf8') as f_voted:
+with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
     for i, row in enumerate(data['udtagger_' + bank]):
+        if row['ID'] == '1':
+            vote_writer.writerow('')
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
@@ -209,9 +221,10 @@ with open(wdir/('MM_voted_' + bank + '_nosentsplit.conllu'), 'w', newline='', en
             # Seems to write Trankit-Mega
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
-    # BUG(s): Missing empty lines between sentences, FEATS print as dicts.
-    # Print before splitting?
-    # Right thing to do for individual FEAT voting: Construct the FEATS for conllu from the dict.
+    # BUG(s): 
+    # - Empty line at beginning
+    # - Empty line missing from end.
+    # - When mwt 1-x
 
 # Fix missing empty lines regex:
 # \n1\t
