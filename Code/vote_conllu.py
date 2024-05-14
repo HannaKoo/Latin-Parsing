@@ -213,3 +213,17 @@ with open(wdir/('MM_voted_' + bank + '_nosentsplit.conllu'), 'w', newline='', en
     # Print before splitting?
     # Right thing to do for individual FEAT voting: Construct the FEATS for conllu from the dict.
 
+# Fix missing empty lines regex:
+# \n1\t
+# \n\n1\t
+
+# Problems with mwt, probably, 
+# at least when
+
+# 1-2 Nonni
+#  <--- Will enter an empty line here.
+# 1 No
+# 2 Niin
+
+# Find all mwt with:
+# \n[0-9]*-[0-9]
