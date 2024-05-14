@@ -1,5 +1,5 @@
 ID	FORM	UPOS	pop	Case	Case	Case	Gender	Gender	Gender	Number	Number	Number	Degree	Degree	Degree	Aspect	Aspect	Aspect	Mood	Mood	Mood	Tense	Tense	Tense	Voice	Voice	Voice	VerbForm	VerbForm	VerbForm	Person	Person	Person
-				Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb	Stanza-Mega_ittb	Trankit-Mega_ittb	udtagger_ittb
+				Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger
 1	non	PART	3																														
 2	autem	PART	3																														
 3	a	ADP	3																														

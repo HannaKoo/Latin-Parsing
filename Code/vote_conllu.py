@@ -15,15 +15,6 @@
 # verbatim to the result conllu?
 # - We might want to vote on FEATS features, when everyone agrees on POS.
 
-# Voting cases:
-# - three different UPOSes: Pick UPOS and FEATS from Trankit (and the whole line preferably?)
-# - 2 vs 1: Pick winning UPOS, and select corresponding FEATS in order (of what's left): 
-#  1. trankit -> If it's Trankit, take the whole line from there.
-#  2. udtagger -> 
-#  3. stanza (i.e. Never pick Stanza!)
-# - three same UPOSes: Vote FEATS: as a whole or individual FEATs.
-
-
 import pathlib
 import csv
 import re
@@ -36,7 +27,7 @@ from pprint import pprint
 # PROIEL: TrMegaPRO-StClassPrePRO-CustomPRO
 # UDante: TrMegaUdante-StMegaPreUDante-CustomUDante
 
-todo = {
+todo = {  # (Not used)
         'ITTB': [['Trankit', 'Mega'], ['Stanza', 'Mega', 'pretokenized']], 
         'LLCT': [['Trankit', 'Mega'], ['Stanza', 'Mega', 'pretokenized']],
         
@@ -51,8 +42,9 @@ bank = 'ittb'  # based on udtagger
 wdir = pathlib.Path("Results/conllu_files/test_output")
 rdir = pathlib.Path("Results/conllu_files/vote_" + bank)  # Note: short test data has no mwt!
 # MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
-filename_pattern = "MM_(.*?)_(.*?)_.*"
+origin_filename_pattern = "MM_(.*?)_(.*?)_.*"
 #                       ^^^   ^^^ = file id / origin, eg. Stanza-Mega_ittb
+model_filename_pattern = "MM_(.*?)[-_].*"
 header = ['ID','FORM','LEMMA','UPOS','XPOS','FEATS','HEAD','DEPREL','DEPS','MISC']
 
 def read_conllus(rdir, filename_pattern):
@@ -71,7 +63,7 @@ def read_conllus(rdir, filename_pattern):
     p = re.compile(filename_pattern)
     for file in files:
         m = p.match(file.stem)
-        origin = m.group(1) + '_' + m.group(2)
+        origin = m.group(1) # + '_' + m.group(2)
         print("Reading  ", file)
         print("as", origin, "\n")
         with open(file, 'r', newline='', encoding="utf8") as f:
@@ -123,7 +115,7 @@ def popularity_vote(data, line_nr):
     return Counter(UPOSes).most_common(1)[0]  # , best_origin
 
 
-data = read_conllus(rdir, filename_pattern)
+data = read_conllus(rdir, model_filename_pattern)
 data, featkeys = split_feats(data)
 # TODO: Get rid of featkeys
 # Write a function to get feats from data.
@@ -187,7 +179,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
     tsv_writer.writerow(writeheaders1)
     tsv_writer.writerow(writeheaders2)
 
-    for i, row in enumerate(data['udtagger_' + bank]):
+    for i, row in enumerate(data['udtagger']): # _' + bank]):
         # It does not matter which ^^origin^^ to choose here, because
         # line breaks, ID and FORM match(?)
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
@@ -207,7 +199,8 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 skipnext = False
 with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
-    for i, row in enumerate(data['udtagger_' + bank]):
+    for i, row in enumerate(data['udtagger']): # _' + bank]):
+    # for i, row in enumerate(data['udtagger_' + bank]):
         if row['ID'].startswith('1-') and i != 0:  # sentence begins with mwt
             vote_writer.writerow('')
             skipnext = True
@@ -220,16 +213,30 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
-            if head == 'UPOS':
+            if head == 'LEMMA':
+                newrow.append(data[origin][i][head])
+            elif head == 'UPOS':
                 newrow.append(UPOS_popular)
             elif head == 'FEATS':
                 newrow.append(join_feats(data[origin][i][head]))
             else:
                 newrow.append(data[origin][i][head])
-            # Seems to write Trankit-Mega
+            # Seems to write Trankit-Mega, not always:
+            # origin is not in this loop, and it's value is whatever is
+            # left from the previous loop!
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
     vote_writer.writerow('')
+
+# Not necessary: All LEMMAs from Stanza, because it's the best. And udtagger has no LEMMAs.
+
+# Voting cases:
+# - three different UPOSes: Pick UPOS and FEATS from Trankit (and the whole line preferably?)
+# - 2 vs 1: Pick winning UPOS, and select corresponding FEATS in order (of what's left): 
+#  1. trankit -> If it's Trankit, take the whole line from there.
+#  2. udtagger -> 
+#  3. stanza (i.e. Never pick Stanza!)
+# - three same UPOSes: Vote FEATS: as a whole or individual FEATs.
 
 # Fix missing empty lines regex:
 # \n1\t
