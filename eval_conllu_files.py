@@ -7,11 +7,14 @@
 import pathlib
 import subprocess
 
-ud_tools = "/projappl/project_2008402/tools/"
-MM_golds = pathlib.Path("../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks")
+ud_tools = "/projappl/project_2008402/tools/"  # puhti
+MM_golds = pathlib.Path("../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks")  # puhti
+# NO this does not work:
+# ud_tools = r"c:\Users\Hanna-Mari\Documents\Väitöskirja\tools\\"  # hm @ frakkis
+# MM_golds = pathlib.Path("../misc_github/Latin-variability/morpho_harmonization/morpho-harmonized-treebanks")  # hm @ frakkis
 
 # Results/conllu_files/*.conllu
-rdir = pathlib.Path("Results/conllu_files")
+rdir = pathlib.Path("Results/conllu_files/test_output")
 wdir = pathlib.Path("Results/Evaluation_metrics")
 
 # banks = ['ittb', 'llct', 'perseus', 'proiel', 'udante']
@@ -20,7 +23,7 @@ wdir = pathlib.Path("Results/Evaluation_metrics")
 # rdir = pathlib.Path("Results/conllu_files")/('vote_' + bank)
 # case_sensitive requires Python 3.12!
 # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
-for conllu_file in rdir.glob('MM_udtagger*.conllu'):
+for conllu_file in rdir.glob('*.conllu'):
     wfile = (wdir/conllu_file.stem).with_suffix(".md")
     bank = str(conllu_file.stem).split('_')[2]
     print('bank', bank)
