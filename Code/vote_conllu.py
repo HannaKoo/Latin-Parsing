@@ -204,11 +204,17 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 ## TODO:
 # (- Vote on FEATS.)
 
+skipnext = False
 with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
     for i, row in enumerate(data['udtagger_' + bank]):
-        if row['ID'] == '1' and i != 0:
+        if row['ID'].startswith('1-') and i != 0:  # sentence begins with mwt
             vote_writer.writerow('')
+            skipnext = True
+        if row['ID'] == '1' and i != 0 and not skipnext:
+            vote_writer.writerow('')
+            skipnext = False
+            
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
         newrow = []
         for head in header:
