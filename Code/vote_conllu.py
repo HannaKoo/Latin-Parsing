@@ -106,13 +106,14 @@ def popularity_vote(data, line_nr):
     # if there are no UPOS, return (None, None).
     # TODO: Which origins is the winner from?
     UPOSes = []
+    # UPOSes = {}
     for origin in data:
         UPOS = data[origin][line_nr]['UPOS']
         if UPOS != None:  # TODO: Try .get(key, with default)
             UPOSes.append(UPOS)
         if UPOSes == []:
             return None, None
-    return Counter(UPOSes).most_common(1)[0]  # , best_origin
+    return Counter(UPOSes).most_common(1)[0]  # , best_origin(s)
 
 
 data = read_conllus(rdir, model_filename_pattern)
@@ -196,11 +197,11 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 ## TODO:
 # (- Vote on FEATS.)
 
-skipnext = False
+default = 'Trankit'
 with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
+    skipnext = False
     for i, row in enumerate(data['udtagger']): # _' + bank]):
-    # for i, row in enumerate(data['udtagger_' + bank]):
         if row['ID'].startswith('1-') and i != 0:  # sentence begins with mwt
             vote_writer.writerow('')
             skipnext = True
@@ -211,16 +212,17 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
                 vote_writer.writerow('')
 
         UPOS_popular, UPOS_popularity = popularity_vote(data, i)
+        # UPOS_popular, UPOS_popularity, best_model = popularity_vote(data, i)
         newrow = []
         for head in header:
             if head == 'LEMMA':
-                newrow.append(data[origin][i][head])
+                newrow.append(data['Stanza'][i][head])
             elif head == 'UPOS':
                 newrow.append(UPOS_popular)
             elif head == 'FEATS':
-                newrow.append(join_feats(data[origin][i][head]))
+                newrow.append(join_feats(data[default][i][head]))  # <-- best_model
             else:
-                newrow.append(data[origin][i][head])
+                newrow.append(data[default][i][head])
             # Seems to write Trankit-Mega, not always:
             # origin is not in this loop, and it's value is whatever is
             # left from the previous loop!
