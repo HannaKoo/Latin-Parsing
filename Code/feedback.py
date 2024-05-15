@@ -19,10 +19,10 @@ conlluroot = pathlib.Path('Results/conllu_files')
 # eg. MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
 #     MM_Trankit-Mega_proiel_nolinebreaks.conllu
 
-for st_file in rdir.glob('*'):
+for st_file in rdir.glob('*circse*'):
     bank = st_file.stem.split('_')[2]
     print("Now doing:", bank)
-    tr_filename = pathlib.Path("MM_Trankit-Mega_" + bank + "_nolinebreaks.conllu")
+    tr_filename = pathlib.Path("MM_Trankit-Megawombatti_" + bank + "_slurm.conllu")
     tr_file = conlluroot/("vote_" + bank)/tr_filename
     wfilename = pathlib.Path(st_file.stem + "_fedback.conllu")
     wfile = wdirroot/("vote_" + bank)/wfilename
