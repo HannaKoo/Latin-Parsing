@@ -8,7 +8,7 @@
 # Then split FEATS-column on '|'. Then split feats on '=' and make a dict.
 
 # Write a new conllu file with voted UPOS (and FEATS?).
-# Should we take LEMMA from Stanza?
+# Take LEMMA from Stanza.
 
 # Difference:
 # - Earlier we wanted to split feats, but now we might just copy them
@@ -21,6 +21,7 @@ import re
 from collections import Counter
 from pprint import pprint
 
+# Selected models:
 # ITTB: TrMegaITTB-StMegaPreITTB-CustomITTB
 # LLCT: TrMegaLLCT-StMegaPreLLCT-CustomLLCT
 # Perseus: TrMegaPerseus-StClassPrePerseus-CustomPerseus
@@ -33,17 +34,19 @@ todo = {  # (Not used)
         
         }
 
-bank = 'ittb'  # based on udtagger
+# There's no loop, only one allowed:
+# bank = 'ittb'
 # bank = 'llct'
-# bank = 'perseus'  # based on udtagger
+bank = 'perseus'
 # bank = 'proiel' 
 # bank = 'udante'
 
 wdir = pathlib.Path("Results/conllu_files/test_output")
-rdir = pathlib.Path("Results/conllu_files/vote_" + bank)  # Note: short test data has no mwt!
-# MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
-origin_filename_pattern = "MM_(.*?)_(.*?)_.*"
-#                       ^^^   ^^^ = file id / origin, eg. Stanza-Mega_ittb
+rdir = pathlib.Path("Results/conllu_files/vote_" + bank)
+
+# Filename eg: MM_Stanza-Classical_proiel_pretokenized-Trankit.conllu
+# origin_filename_pattern = "MM_(.*?)_(.*?)_.*"
+#                              ^^^   ^^^ = file id / origin, eg. Stanza-Mega_ittb
 model_filename_pattern = "MM_(.*?)[-_].*"
 header = ['ID','FORM','LEMMA','UPOS','XPOS','FEATS','HEAD','DEPREL','DEPS','MISC']
 
@@ -121,6 +124,8 @@ def popularity_vote(data, line_nr):
         del UPOSes[i]
     return votedPOS, popularity, UPOSes
 
+# From the old popularity_vote():
+# Where does it need the None check?
     #     UPOS = data[origin][line_nr]['UPOS']
     #     if UPOS != None:  # TODO: Try .get(key, with default)
     #         UPOSes.append(UPOS)
@@ -236,9 +241,6 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
                 newrow.append(join_feats(data[default][i][head]))  # <-- best_model
             else:
                 newrow.append(data[default][i][head])
-            # Seems to write Trankit-Mega, not always:
-            # origin is not in this loop, and it's value is whatever is
-            # left from the previous loop!
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
         # vote_writer.writerow([UPOS_popular, UPOS_popularity])

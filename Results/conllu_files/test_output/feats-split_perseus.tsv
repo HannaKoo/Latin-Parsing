@@ -1,5 +1,5 @@
 ID	FORM	UPOS	pop	Case	Case	Case	Gender	Gender	Gender	Number	Number	Number	Degree	Degree	Degree	Aspect	Aspect	Aspect	Mood	Mood	Mood	Tense	Tense	Tense	Voice	Voice	Voice	VerbForm	VerbForm	VerbForm	Person	Person	Person
-				Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus	Stanza-Classical_perseus	Trankit-Mega_perseus	udtagger_perseus
+				Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger	Stanza	Trankit	udtagger
 1	Te	PRON	2	Acc	Acc	Acc			Fem	Sing	Sing	Sing																			2	2	
 2	quoque	ADV	3																														
 3	magna	ADJ	3	Nom	Nom	Nom	Neut	Neut	Neut	Plur	Plur	Plur																					
