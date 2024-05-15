@@ -37,9 +37,9 @@ todo = {  # (Not used)
 # There's no loop, only one allowed:
 # bank = 'ittb'
 # bank = 'llct'
-bank = 'perseus'
+# bank = 'perseus'
 # bank = 'proiel' 
-# bank = 'udante'
+bank = 'udante'
 
 wdir = pathlib.Path("Results/conllu_files/test_output")
 rdir = pathlib.Path("Results/conllu_files/vote_" + bank)
