@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Based on auctoritate/Code/conllu-split-feats.py 2024-05-10
 
 # Collect and combine corresponding columns from different conllu-files for comparison.

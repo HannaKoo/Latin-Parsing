@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+# Run from Latin-Parsing by
+# Code/conllu-split-feats-plan.py
+
 # Like conllu-split-feats.py, but load input files separately from
 # different places and different names based on a todo list (actually 
 # a dict).
