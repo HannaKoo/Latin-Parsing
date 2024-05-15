@@ -255,9 +255,9 @@ with open(wdir/('MM_voted-FEATSwhole_' + bank + '.conllu'), 'w', newline='', enc
                         newrow.append(join_feats(data['Trankit'][i][head]))
                     else:
                         newrow.append((FEATS_popular))
-                        # BUG: we should assign to best_model but don't know what it is...
+                        # Here we should assign to best_model but don't know what it is...
                         # modify FEATS vote to match POS vote, or use append everywhere?
-                        # Would it be possible to combine FEATS-vote and POS-vote?
+                        # Would it be possible to combine FEATS-vote and POS-vote functions?
                 elif 'Trankit' in best_models:
                     best_model = 'Trankit'
                     newrow.append(join_feats(data[best_model][i][head]))
@@ -269,7 +269,7 @@ with open(wdir/('MM_voted-FEATSwhole_' + bank + '.conllu'), 'w', newline='', enc
         vote_writer.writerow(newrow)
         # vote_writer.writerow([UPOS_popular, UPOS_popularity])
         # vote_writer.writerow(best_models)
-    vote_writer.writerow('')  # Add newline at the end.
+    vote_writer.writerow('')  # Add newline at the end of file.
 
 # Voting cases:
 # - three different UPOSes: Pick UPOS and FEATS from Trankit (and the whole line preferably?)
