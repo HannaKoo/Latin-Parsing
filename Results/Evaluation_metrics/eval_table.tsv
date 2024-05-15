@@ -1,4 +1,5 @@
 ModelName                                      	Tokens	UPOS	UFeats	Lemmas	UAS	LAS
+MM_Stanza-Classical_circse_pretokenized-Trankit	99.82	84.47	56.85	73.21	50.22	44.04
 MM_Stanza-Classical_perseus_output.............	99.92	90.09	81.33	85.89	75.28	68.29
 MM_Stanza-Classical_proiel_output..............	99.99	95.79	88.84	96.29	78.08	74.38
 MM_Stanza-Mega_ittb_output.....................	100.00	97.14	92.55	97.99	88.53	86.06
@@ -9,13 +10,16 @@ MM_Stanza_llct.................................	100.00	99.61	96.95	98.07	95.85	9
 MM_Stanza_perseus..............................	99.94	89.44	80.17	80.97	69.75	61.93
 MM_Stanza_proiel...............................	99.99	97.22	92.14	96.63	78.12	74.56
 MM_Stanza_udante...............................	99.65	89.98	81.00	86.94	68.37	59.15
+MM_Trankit-Classical_circse_slurm..............	99.71	83.08	57.09	62.87	50.57	43.06
 MM_Trankit-Classical_perseus_nolinebreaks......	99.69	90.42	83.11	74.53	77.78	71.18
 MM_Trankit-Classical_perseus_slurm.............	99.74	90.50	83.25	74.60	77.89	71.28
 MM_Trankit-Classical_proiel_slurm..............	99.86	97.25	92.64	89.71	83.67	80.64
+MM_Trankit-Lame_circse_slurm...................	99.76	82.97	55.32	64.64	49.31	40.86
 MM_Trankit-Lame_ittb_slurm.....................	100.00	99.05	97.61	97.87	91.86	90.52
 MM_Trankit-Lame_llct_slurm.....................	99.79	91.60	71.98	70.62	68.14	59.95
 MM_Trankit-Lame_proiel_slurm...................	99.82	94.80	87.88	82.77	78.73	74.38
 MM_Trankit-Lame_udante_slurm...................	99.52	90.99	83.87	76.20	78.56	72.01
+MM_Trankit-Late_circse_slurm...................
 MM_Trankit-Late_ittb_slurm.....................	99.99	99.02	97.42	97.73	92.08	90.60
 MM_Trankit-Late_llct_slurm.....................	99.99	99.66	97.18	96.69	96.46	95.51
 MM_Trankit-Late_udante_test_output_nolinebreaks	99.62	90.87	83.67	77.10	78.51	71.65
@@ -24,6 +28,7 @@ MM_Trankit-Mega_llct_nolinebreaks..............	100.00	99.63	97.15	96.57	96.18	9
 MM_Trankit-Mega_perseus_nolinebreaks...........	99.79	91.83	80.94	76.55	77.72	70.59
 MM_Trankit-Mega_proiel_nolinebreaks............	99.88	97.30	92.96	89.24	83.94	80.92
 MM_Trankit-Mega_udante_nolinebreaks............	99.66	91.46	84.42	77.50	79.63	73.42
+MM_Trankit-Megawombatti_circse_slurm...........	99.82	83.21	57.76	68.15	51.29	44.54
 MM_Trankit_ittb_test_output_nolinebreaks.......	99.99	98.99	97.52	97.63	92.09	90.71
 MM_Trankit_llct_test_output_nolinebreaks.......	99.99	99.66	97.36	96.50	96.15	95.37
 MM_Trankit_perseus_test_output_nolinebreaks....	99.46	88.90	77.98	63.99	74.08	66.97
