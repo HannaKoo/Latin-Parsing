@@ -133,6 +133,15 @@ def popularity_vote(data, line_nr):
     #         return None, None
     # return Counter(UPOSes).most_common(1)[0]  # , best_origin(s)
 
+def feats_vote(data, line_nr):
+    # Voting for the case when all UPOS agree.
+    # For now compare all FEATS at once.
+    FEATSes = []
+    for model in data:
+        FEATSes.append(join_feats(data[model][line_nr]['FEATS']))
+    voted_FEATS, FEATSpopularity = Counter(FEATSes).most_common(1)[0]
+    return voted_FEATS, FEATSpopularity
+
 
 data = read_conllus(rdir, model_filename_pattern)
 data, featkeys = split_feats(data)
@@ -212,13 +221,10 @@ with wfile.open('w', newline='', encoding='utf8') as f:
                         newrow.append('')  # insert placeholder for empty column
         tsv_writer.writerow(newrow)
 
-## TODO:
-# (- Vote on FEATS.)
-
 # Write conllu with voting:
 # ------------------------
 default = 'Trankit'
-with open(wdir/('MM_voted-FEATSprelim_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
+with open(wdir/('MM_voted-FEATSwhole_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
     skipnext = False
     for i, row in enumerate(data['udtagger']): # _' + bank]):
@@ -242,11 +248,22 @@ with open(wdir/('MM_voted-FEATSprelim_' + bank + '.conllu'), 'w', newline='', en
             elif head == 'UPOS':
                 newrow.append(UPOS_popular)
             elif head == 'FEATS':
-                if 'Trankit' in best_models:
+                if UPOS_popularity == 3:  # Now we can vote on FEATS:
+                    FEATS_popular, FEATS_popularity = feats_vote(data, i)
+                    if FEATS_popularity == 1:  # Vote even, default to Trankit:
+                        # best_model = 'Trankit'
+                        newrow.append(join_feats(data['Trankit'][i][head]))
+                    else:
+                        newrow.append((FEATS_popular))
+                        # BUG: we should assign to best_model but don't know what it is...
+                        # modify FEATS vote to match POS vote, or use append everywhere?
+                        # Would it be possible to combine FEATS-vote and POS-vote?
+                elif 'Trankit' in best_models:
                     best_model = 'Trankit'
+                    newrow.append(join_feats(data[best_model][i][head]))
                 else:
                     best_model = 'udtagger'
-                newrow.append(join_feats(data[best_model][i][head]))
+                    newrow.append(join_feats(data[best_model][i][head]))
             else:
                 newrow.append(data[default][i][head])
         vote_writer.writerow(newrow)
