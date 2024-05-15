@@ -248,3 +248,25 @@ udtagger 12096 lines vs Trankit-Mega 11995 lines
 `test_vote/` includes 71 lines from the beginning of files plus a sentence towards the end with some words where `pos`s disagree completely, eg. contractarum.
 
 Tokenization is same on these.
+
+
+### Fix missing empty lines regex:
+
+```
+\n1\t  
+\n\n1\t
+```
+
+### Problems with mwt, probably, 
+
+at least when:
+```
+1-2 Nonni
+ <--- Will enter an empty line here.
+1 No
+2 Niin
+```
+
+### Find all mwt with:
+
+`\n[0-9]*-[0-9]`

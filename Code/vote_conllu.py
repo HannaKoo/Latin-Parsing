@@ -215,11 +215,15 @@ with wfile.open('w', newline='', encoding='utf8') as f:
 ## TODO:
 # (- Vote on FEATS.)
 
+# Write conllu with voting:
+# ------------------------
 default = 'Trankit'
-with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
+with open(wdir/('MM_voted-FEATSprelim_' + bank + '.conllu'), 'w', newline='', encoding='utf8') as f_voted:
     vote_writer = csv.writer(f_voted, delimiter='\t')
     skipnext = False
     for i, row in enumerate(data['udtagger']): # _' + bank]):
+
+        # Add newlines between sentences:
         if row['ID'].startswith('1-') and i != 0:  # sentence begins with mwt
             vote_writer.writerow('')
             skipnext = True
@@ -238,36 +242,25 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
             elif head == 'UPOS':
                 newrow.append(UPOS_popular)
             elif head == 'FEATS':
-                newrow.append(join_feats(data[default][i][head]))  # <-- best_model
+                if 'Trankit' in best_models:
+                    best_model = 'Trankit'
+                else:
+                    best_model = 'udtagger'
+                newrow.append(join_feats(data[best_model][i][head]))
             else:
                 newrow.append(data[default][i][head])
-            # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
         # vote_writer.writerow([UPOS_popular, UPOS_popularity])
         # vote_writer.writerow(best_models)
-    vote_writer.writerow('')
-
-# Not necessary: All LEMMAs from Stanza, because it's the best. And udtagger has no LEMMAs.
+    vote_writer.writerow('')  # Add newline at the end.
 
 # Voting cases:
 # - three different UPOSes: Pick UPOS and FEATS from Trankit (and the whole line preferably?)
 # - 2 vs 1: Pick winning UPOS, and select corresponding FEATS in order (of what's left): 
-#  1. trankit -> If it's Trankit, take the whole line from there.
-#  2. udtagger -> 
-#  3. stanza (i.e. Never pick Stanza!)
-# - three same UPOSes: Vote FEATS: as a whole or individual FEATs.
+#     1. trankit -> If Trankit is among the best, take the whole line from there (apart from LEMMA).
+#     2. udtagger -> pick udtagger if Trankit was in the minority.
+#     3. stanza (i.e. Never pick Stanza!)
+# - three same UPOSes: Vote FEATS: as a whole, or individual FEATs.
+#    FIXME: The current implementation picks Trankit(?)
 
-# Fix missing empty lines regex:
-# \n1\t
-# \n\n1\t
-
-# Problems with mwt, probably, 
-# at least when
-
-# 1-2 Nonni
-#  <--- Will enter an empty line here.
-# 1 No
-# 2 Niin
-
-# Find all mwt with:
-# \n[0-9]*-[0-9]
+# Not necessary: All LEMMAs from Stanza, because it's the best. And udtagger has no LEMMAs.
