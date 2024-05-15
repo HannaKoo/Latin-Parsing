@@ -105,15 +105,28 @@ def popularity_vote(data, line_nr):
     # returns tuple (most popular UPOS, it's count).
     # if there are no UPOS, return (None, None).
     # TODO: Which origins is the winner from?
-    UPOSes = []
-    # UPOSes = {}
-    for origin in data:
-        UPOS = data[origin][line_nr]['UPOS']
-        if UPOS != None:  # TODO: Try .get(key, with default)
-            UPOSes.append(UPOS)
-        if UPOSes == []:
-            return None, None
-    return Counter(UPOSes).most_common(1)[0]  # , best_origin(s)
+    # UPOSes = []
+    UPOSes = {}
+    for model in data:
+
+        UPOSes[model] = data[model][line_nr]['UPOS']
+        # {Stanza: NOUN, Trankit:NOUN, udtagger:VERB}
+    votedPOS, popularity = Counter(UPOSes.values()).most_common(1)[0]
+    # print(data[model][line_nr]['FORM'], votedPOS, popularity)
+    todelete = []
+    for i in UPOSes:
+        if UPOSes[i] != votedPOS:
+            todelete.append(i)
+    for i in todelete:
+        del UPOSes[i]
+    return votedPOS, popularity, UPOSes
+
+    #     UPOS = data[origin][line_nr]['UPOS']
+    #     if UPOS != None:  # TODO: Try .get(key, with default)
+    #         UPOSes.append(UPOS)
+    #     if UPOSes == []:
+    #         return None, None
+    # return Counter(UPOSes).most_common(1)[0]  # , best_origin(s)
 
 
 data = read_conllus(rdir, model_filename_pattern)
@@ -183,7 +196,7 @@ with wfile.open('w', newline='', encoding='utf8') as f:
     for i, row in enumerate(data['udtagger']): # _' + bank]):
         # It does not matter which ^^origin^^ to choose here, because
         # line breaks, ID and FORM match(?)
-        UPOS_popular, UPOS_popularity = popularity_vote(data, i)
+        UPOS_popular, UPOS_popularity, best_models = popularity_vote(data, i)
         newrow = [row['ID'], row['FORM'], UPOS_popular, UPOS_popularity] 
         for j in include_feats:
             for origin in data:
@@ -211,8 +224,8 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
             else:
                 vote_writer.writerow('')
 
-        UPOS_popular, UPOS_popularity = popularity_vote(data, i)
-        # UPOS_popular, UPOS_popularity, best_model = popularity_vote(data, i)
+        # UPOS_popular, UPOS_popularity = popularity_vote(data, i)
+        UPOS_popular, UPOS_popularity, best_models = popularity_vote(data, i)
         newrow = []
         for head in header:
             if head == 'LEMMA':
@@ -228,6 +241,8 @@ with open(wdir/('MM_votedUPOS_' + bank + '.conllu'), 'w', newline='', encoding='
             # left from the previous loop!
             # Where to get the correct FEATS?
         vote_writer.writerow(newrow)
+        # vote_writer.writerow([UPOS_popular, UPOS_popularity])
+        # vote_writer.writerow(best_models)
     vote_writer.writerow('')
 
 # Not necessary: All LEMMAs from Stanza, because it's the best. And udtagger has no LEMMAs.
