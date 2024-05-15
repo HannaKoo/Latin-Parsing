@@ -18,6 +18,7 @@ MM_golds = pathlib.Path("../../")  # puhti
 # Results/conllu_files/*.conllu
 rdir = pathlib.Path("Results/conllu_files/test_output")
 rdir = pathlib.Path("Results/conllu_files/vote_circse")
+rdir = pathlib.Path("Results/conllu_files")
 wdir = pathlib.Path("Results/Evaluation_metrics")
 
 # banks = ['ittb', 'llct', 'perseus', 'proiel', 'udante']
