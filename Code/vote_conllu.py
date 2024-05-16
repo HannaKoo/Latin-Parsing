@@ -1,4 +1,12 @@
+#!/usr/bin/env python3
+
 # Based on conllu-split-feats.py 2024-05-12
+
+# pprint gets sort_dicts=False somewhere between 3.6.8 and 3.10.13`
+# The Puhti module python-data has the latter, probably pytorch too?
+# Run first:
+# module load python-data
+#########################
 
 # Collect and combine corresponding columns from different conllu-files for comparison.
 # - Input files must have same tokenization and other line breaks 
@@ -39,7 +47,8 @@ todo = {  # (Not used)
 # bank = 'llct'
 # bank = 'perseus'
 # bank = 'proiel' 
-bank = 'udante'
+# bank = 'udante'
+bank = 'circse'
 
 wdir = pathlib.Path("Results/conllu_files/test_output")
 rdir = pathlib.Path("Results/conllu_files/vote_" + bank)
