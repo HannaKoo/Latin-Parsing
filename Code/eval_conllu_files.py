@@ -16,9 +16,9 @@ MM_golds = pathlib.Path("../../")  # puhti
 # MM_golds = pathlib.Path("../misc_github/Latin-variability/morpho_harmonization/morpho-harmonized-treebanks")  # hm @ frakkis
 
 # Results/conllu_files/*.conllu
-rdir = pathlib.Path("Results/conllu_files/test_output")
+# rdir = pathlib.Path("Results/conllu_files/test_output")
 # rdir = pathlib.Path("Results/conllu_files/vote_circse")
-# rdir = pathlib.Path("Results/conllu_files")
+rdir = pathlib.Path("Results/conllu_files")
 wdir = pathlib.Path("Results/Evaluation_metrics")
 
 # banks = ['ittb', 'llct', 'perseus', 'proiel', 'udante']
@@ -27,9 +27,10 @@ wdir = pathlib.Path("Results/Evaluation_metrics")
 # rdir = pathlib.Path("Results/conllu_files")/('vote_' + bank)
 # case_sensitive requires Python 3.12!
 # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
-for conllu_file in rdir.glob('*circse*.conllu'):
+for conllu_file in rdir.glob('MM_Stanza-*circse*.conllu'):
     wfile = (wdir/conllu_file.stem).with_suffix(".md")
     bank = str(conllu_file.stem).split('_')[2]
+    # bank = "circse"
     print('bank', bank)
     print("conllu_file", conllu_file)
     print('wfile', wfile)
