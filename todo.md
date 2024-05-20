@@ -274,3 +274,9 @@ at least when:
 ### Find all mwt with:
 
 `\n[0-9]*-[0-9]`
+
+
+## CIRCSE
+
+Use all Stanza models on CIRCSE – Classical, Perseus, PROIEL at least.
+
