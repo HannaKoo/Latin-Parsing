@@ -175,6 +175,12 @@ udante 908 removed
 CIRCSE
 4398 removed
 
+ITTB_ittb 4256 removed
+
+LLCT_llct 1776 removed
+
+PROIEL_proiel 2434 removed
+
 
 ## Fix md tables
 
