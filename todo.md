@@ -181,6 +181,8 @@ LLCT_llct 1776 removed
 
 PROIEL_proiel 2434 removed
 
+UDante_udante 908 removed
+
 
 ## Fix md tables
 
