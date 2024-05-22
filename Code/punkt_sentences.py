@@ -11,6 +11,8 @@
 # What about mwt's? We should take the mwt header line and drop the parts,
 # but it would be easier to drop the header. Let's try the right thing.
 
+# TODO: Remove the space before a dot.
+
 import pathlib
 import csv
 
@@ -29,6 +31,7 @@ with open(rdir/rfile, 'r', newline='', encoding='utf8') as f, \
         elif row[0][0] == '#':
             continue
         elif '-' in row[0]:
+            txt.write(row[1] + ' ')
             mwt_end = int(row[0].split('-')[1])
             print(mwt_end)
             while int(next(tsv_reader)[0]) < mwt_end:
