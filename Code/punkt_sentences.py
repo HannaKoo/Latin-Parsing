@@ -4,14 +4,16 @@
 # Should we try to write a conllu file or is a txt enough?
 
 # Read all lines
-# (Find the next empty line, take the number from the ^ previous line, add one and the '.'.)
+# (Find the next empty line, take the number from the ^ previous line, add
+# one and the '.'.)
 # Or just write txt!: 
 # Take the second column, add a punkt whenever there's an empty line.
 
-# What about mwt's? We should take the mwt header line and drop the parts,
-# but it would be easier to drop the header. Let's try the right thing.
+# What about mwt's? Take the mwt header line and drop the parts.
 
-# TODO: Remove the space before a dot.
+# TODO: Remove the space before a dot. Capitalize sentences?
+# TODO: This splits lines after each sentence, would it be better to split at
+# line length?
 
 import pathlib
 import csv
@@ -25,16 +27,16 @@ with open(rdir/rfile, 'r', newline='', encoding='utf8') as f, \
      open(wdir/wfile, 'w', encoding='utf8') as txt:
     tsv_reader = csv.reader(f, delimiter='\t')
     for row in tsv_reader:
-        print(row)
+        # print(row)
         if len(row) == 0:
             txt.write('.\n')
         elif row[0][0] == '#':
             continue
-        elif '-' in row[0]:
+        elif '-' in row[0]:  # mwt, skip over the parts:
             txt.write(row[1] + ' ')
             mwt_end = int(row[0].split('-')[1])
-            print(mwt_end)
+            # print(mwt_end)
             while int(next(tsv_reader)[0]) < mwt_end:
-                pass
+                pass  # would continue be better? different?
         else:        
             txt.write(row[1] + ' ')
