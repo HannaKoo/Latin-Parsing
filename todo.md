@@ -288,3 +288,22 @@ at least when:
 
 Use all Stanza models on CIRCSE – Classical, Perseus, PROIEL at least.
 
+## CIRCSEpunkt
+
+Add `.` at the end of every sentence. Write to a txt file.
+
+Run models on the txt.
+
+Remove the `.` from the resulting conllus:  
+`[0-9]*\t\..*\n`
+
+MM_Stanza-classical_slurm_circsepunkt.conllu 1263 removed
+
+Same number from the others, of course.
+
+### eval.py not working on these:
+
+Kun pisteet poistaa conlluista niin sinne jää numerointiin aukkoja aina kun piste on jäänyt lauseen keskelle. eval.py kosahtaa siihen.
+
+Pitää varmaan tehdä pisteellinen GS. Mutta sekin on vaikee... Tai sitten ei.
+

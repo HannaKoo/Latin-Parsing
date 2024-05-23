@@ -27,10 +27,10 @@ wdir = pathlib.Path("Results/Evaluation_metrics")
 # rdir = pathlib.Path("Results/conllu_files")/('vote_' + bank)
 # case_sensitive requires Python 3.12!
 # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
-for conllu_file in rdir.glob('MM_Stanza-*circse*.conllu'):
+for conllu_file in rdir.glob('*nopunkt*.conllu'):
     wfile = (wdir/conllu_file.stem).with_suffix(".md")
-    bank = str(conllu_file.stem).split('_')[2]
-    # bank = "circse"
+    # bank = str(conllu_file.stem).split('_')[2]
+    bank = "circse"
     print('bank', bank)
     print("conllu_file", conllu_file)
     print('wfile', wfile)
