@@ -40,7 +40,7 @@ with open(rdir/rfile, 'r', newline='', encoding='utf8') as f, \
         if len(row) == 0:
             punkt = template
             punkt[0] = int(prev) + 1
-            punkt[6] = '_'
+            punkt[6] = int(prev)
             conllu_writer.writerow(punkt)
             conllu_writer.writerow('')
         # elif row[0][0] == '#':
