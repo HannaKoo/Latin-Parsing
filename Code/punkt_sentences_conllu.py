@@ -28,7 +28,7 @@ rfile = pathlib.Path("la_circse-ud-test.conllu")
 wdir = pathlib.Path("../Latin-Parsing/Data")
 wfile = pathlib.Path("la_circsepunkt-ud-test.conllu")
 
-template = ["14", ".", ".", "PUNCT", "u--------", "_", None, "punct", "_", "_"]
+template = [None, ".", ".", "PUNCT", "u--------", "_", None, "punct", "_", "_"]
 nrHEAD = 6
 
 with open(rdir/rfile, 'r', newline='', encoding='utf8') as f, \
