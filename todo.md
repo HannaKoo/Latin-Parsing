@@ -307,3 +307,9 @@ Kun pisteet poistaa conlluista niin sinne jää numerointiin aukkoja aina kun pi
 
 Pitää varmaan tehdä pisteellinen GS. Mutta sekin on vaikee... Tai sitten ei.
 
+Punkt line looks like this:  
+`[0-9]*	\.	\.	PUNCT	u--------	_	[0-9]*	punct	_	_`  
+e.g.:  
+`14  .   .   PUNCT   u--------   _   13  punct   _   _`  
+Where to get the HEAD (13 in the example)?
+

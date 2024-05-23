@@ -3,6 +3,10 @@
 # Add a '.' at the end of every sentence in a conllu file.
 # Should we try to write a conllu file or is a txt enough?
 
+# A txt is enough to parse, but then conllu eval.py will not evaluate them,
+# because of the extra dots. And if the dots are removed, the token
+# numbering has holes, which will again upset eval.py.
+
 # Read all lines
 # (Find the next empty line, take the number from the ^ previous line, add
 # one and the '.'.)
@@ -13,7 +17,7 @@
 
 # TODO: Remove the space before a dot. Capitalize sentences?
 # TODO: This splits lines after each sentence, would it be better to split at
-# line length?
+# some line length?
 
 import pathlib
 import csv
