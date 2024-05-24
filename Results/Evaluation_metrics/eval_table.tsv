@@ -24,6 +24,8 @@ MM_Trankit-Classical_circsepunkt_slurm.........	99.78	85.21	59.75	65.44	56.61	48
 MM_Trankit-Classical_perseus_nolinebreaks......	99.69	90.42	83.11	74.53	77.78	71.18
 MM_Trankit-Classical_perseus_slurm.............	99.74	90.50	83.25	74.60	77.89	71.28
 MM_Trankit-Classical_proiel_slurm..............	99.86	97.25	92.64	89.71	83.67	80.64
+MM_Trankit-ITTB_circse_slurm...................
+MM_Trankit-LLCT_circse_slurm...................
 MM_Trankit-Lame_Christ_circsepunkt_nopunkt_slur	99.79	83.84	55.40	64.46	57.08	47.34
 MM_Trankit-Lame_Christ_circsepunkt_slurm.......	99.80	84.85	58.20	66.69	54.53	45.41
 MM_Trankit-Lame_circse_slurm...................	99.76	82.97	55.32	64.64	49.31	40.86
@@ -44,6 +46,9 @@ MM_Trankit-Mega_proiel_nolinebreaks............	99.88	97.30	92.96	89.24	83.94	80
 MM_Trankit-Mega_udante_nolinebreaks............	99.66	91.46	84.42	77.50	79.63	73.42
 MM_Trankit-Megawombatti_circse_slurm...........	99.82	83.21	57.76	68.15	51.29	44.54
 MM_Trankit-Megawombatti_circsepunkt_slurm......	99.79	87.05	61.39	71.73	59.16	50.91
+MM_Trankit-PROIEL_circse_slurm.................	99.24	81.50	55.39	60.08	49.44	41.92
+MM_Trankit-Perseus_circse_slurm................
+MM_Trankit-UDante_circse_slurm.................
 MM_Trankit_ittb_test_output_nolinebreaks.......	99.99	98.99	97.52	97.63	92.09	90.71
 MM_Trankit_llct_test_output_nolinebreaks.......	99.99	99.66	97.36	96.50	96.15	95.37
 MM_Trankit_perseus_test_output_nolinebreaks....	99.46	88.90	77.98	63.99	74.08	66.97
