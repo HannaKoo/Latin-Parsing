@@ -35,6 +35,7 @@ from pprint import pprint
 # Perseus: TrMegaPerseus-StClassPrePerseus-CustomPerseus
 # PROIEL: TrMegaPRO-StClassPrePRO-CustomPRO
 # UDante: TrMegaUdante-StMegaPreUDante-CustomUDante
+#### NOTE: Actually Stanza individuals are usually better than combined models listed here.
 
 todo = {  # (Not used)
         'ITTB': [['Trankit', 'Mega'], ['Stanza', 'Mega', 'pretokenized']], 
