@@ -313,3 +313,19 @@ e.g.:
 `14  .   .   PUNCT   u--------   _   13  punct   _   _`  
 Where to get the HEAD (13 in the example)?
 
+
+# 2024-08-23 udtagger merged -> Vote
+
+```bash
+cd Results/conllu_files/
+mkdir voted_udtagger-merge
+python3 ../../Code/vote.py vote_ittb/MM_Trankit* vote_ittb/MM_Stanza* vote_ittb/MM_UD* --output voted_udtagger-merge/MM_voted_ittb.conllu
+python3 ../../Code/vote.py vote_llct/MM_Trankit* vote_llct/MM_Stanza* vote_llct/MM_ud* --output voted_udtagger-merge/MM_voted_llct.conllu  # No merged!
+treebank=perseus
+echo $treebank 
+python3 ../../Code/vote.py vote_$treebank/MM_Trankit* vote_$treebank/MM_Stanza* vote_$treebank/MM_UD* --output voted_udtagger-merge/MM_voted_$treebank.conllu
+treebank=proiel
+python3 ../../Code/vote.py vote_$treebank/MM_Trankit* vote_$treebank/MM_Stanza* vote_$treebank/MM_UD* --output voted_udtagger-merge/MM_voted_$treebank.conllu
+treebank=udante
+python3 ../../Code/vote.py vote_$treebank/MM_Trankit* vote_$treebank/MM_Stanza* vote_$treebank/MM_UD* --output voted_udtagger-merge/MM_voted_$treebank.conllu
+```
