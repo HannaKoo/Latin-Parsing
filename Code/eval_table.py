@@ -10,8 +10,10 @@ import csv
 
 include = ['ModelName'.ljust(47), 'Tokens', 'UPOS', 'UFeats', 'Lemmas', 'UAS', 'LAS']
 
-rdir = pathlib.Path('Results/Evaluation_metrics')
-wdir = pathlib.Path('Results/Evaluation_metrics')
+# rdir = pathlib.Path('Results/Evaluation_metrics')
+# wdir = pathlib.Path('Results/Evaluation_metrics')
+rdir = pathlib.Path('Results/Evaluation_metrics/voted')
+wdir = pathlib.Path('Results/Evaluation_metrics/voted')
 
 with open(wdir/'eval_table.tsv', 'w', newline='') as f:
     tsv_writer = csv.writer(f, delimiter='\t')

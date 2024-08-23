@@ -329,3 +329,7 @@ python3 ../../Code/vote.py vote_$treebank/MM_Trankit* vote_$treebank/MM_Stanza* 
 treebank=udante
 python3 ../../Code/vote.py vote_$treebank/MM_Trankit* vote_$treebank/MM_Stanza* vote_$treebank/MM_UD* --output voted_udtagger-merge/MM_voted_$treebank.conllu
 ```
+
+### eval
+
+kupariha/Latin-Parsing/Results/Evaluation_metrics/voted/eval_table.tsv
