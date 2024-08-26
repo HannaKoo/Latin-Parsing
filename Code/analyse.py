@@ -13,7 +13,7 @@ def vote_upos(upos):
 
 
 def analyze_data(upos_votes, total_lines):
-    agreed = [tuple(upos) for upos, count in upos_votes if count > 1]
+    agreed = [tuple(upos) for upos, count in upos_votes if count > 1]  # Includes also cases where one disagrees with the other two.
     dispersed_groups = [tuple(sorted(upos)) for upos, count in upos_votes if count == 1]
 
     most_agreed = Counter(agreed).most_common(30)
@@ -64,6 +64,9 @@ def main(args):
 
         if vote_count == 1:  # All UPOS tags are unique
             correct_upos = cols[0][UPOS]  # Assume the first file is the ground truth
+            # BUG?: We need to compare to gold standard? 
+            # At least in vote.py vote_upos is always from the first file, 
+            # i.e. voted_upos == correct_upos.
             if voted_upos != correct_upos:
                 incorrect_dispersed.append((cols[0][FORM], upos, correct_upos))
 
