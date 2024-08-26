@@ -1,5 +1,7 @@
 import argparse
 from collections import Counter
+from pprint import pprint
+import pathlib
 
 ID, FORM, LEMMA, UPOS, XPOS, FEATS, HEAD, DEPREL, DEPS, MISC = range(10)
 
@@ -14,8 +16,8 @@ def analyze_data(upos_votes, total_lines):
     agreed = [tuple(upos) for upos, count in upos_votes if count > 1]
     dispersed_groups = [tuple(sorted(upos)) for upos, count in upos_votes if count == 1]
 
-    most_agreed = Counter(agreed).most_common(3)
-    most_dispersed = Counter(dispersed_groups).most_common(3)
+    most_agreed = Counter(agreed).most_common(30)
+    most_dispersed = Counter(dispersed_groups).most_common(30)
 
     agreed_proportion = sum(count for _, count in most_agreed) / total_lines
     dispersed_proportion = sum(count for _, count in most_dispersed) / total_lines
@@ -39,6 +41,9 @@ def analyze_data(upos_votes, total_lines):
 
 def main(args):
     files = [open(fname, "rt", encoding="utf-8") for fname in args.predicted_files]
+
+    wdir = pathlib.Path('Results/analyse')
+    wdir.mkdir(parents=True, exist_ok=True)
 
     upos_votes = []
     total_lines = 0
@@ -91,6 +96,11 @@ def main(args):
             f.write(
                 f"Word: {form}\nPredictions: {', '.join(upos)}\nCorrect UPOS: {correct_upos}\n\n"
             )
+
+    with open(wdir/"incorrect_dispersed", 'w', encoding="utf8") as g:
+        pprint(incorrect_dispersed, g)
+    with open(wdir/"most_agreed", 'w', encoding="utf8") as g:
+        pprint(most_agreed, g)
 
     print(f"Analysis complete. Results written to {args.output}")
 
