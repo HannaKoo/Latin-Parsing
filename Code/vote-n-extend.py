@@ -4,14 +4,16 @@ from collections import Counter
 
 ID, FORM, LEMMA, UPOS, XPOS, FEATS, HEAD, DEPREL, DEPS, MISC = range(10)
 
+vote_results = {1: 'evenvote', 2: 'two2one', 3:'allsame'}
+
 def vote_upos(upos):
     # upos is a lsit of upos tags
     c = Counter(upos)
     k, v = c.most_common(1)[0] # count them, and take the most common
     if v > 1: # if most common appears more than once, take it...
-        return k
+        return k, v
     else:
-        return upos[0] # ...otherwise take the first one (files are in order of priority)
+        return upos[0], v # ...otherwise take the first one (files are in order of priority)
     
 def vote_whole_feats(feats):
     # try if you have two to one voting using complete feature strings
@@ -86,8 +88,8 @@ def main(args):
             upos = [c[UPOS] for c in cols] # gather all upos's
             feats = [c[FEATS] for c in cols] # gather all features
 
-            voted_upos = vote_upos(upos)
-            print(f"Voted {voted_upos} from {upos}")
+            voted_upos, num_votes = vote_upos(upos)
+            print(f"Voted {voted_upos} from {upos} with popularity {num_votes}")
 
             # prune features
             # if upos was outvoted, remove its features
@@ -106,7 +108,8 @@ def main(args):
             
             cols[0][UPOS] = voted_upos
             cols[0][FEATS] = voted_feats
-            cols[0][UPOS+1:UPOS+1] = upos
+            upos.append(vote_results[num_votes])
+            cols[0][UPOS+1:UPOS+1] = upos  # Insert the whole upos list after the voted upos
             print("\t".join(cols[0]), file=f)
 
 
