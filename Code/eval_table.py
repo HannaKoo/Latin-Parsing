@@ -8,12 +8,14 @@ import pathlib
 from pprint import pprint
 import csv
 
-include = ['ModelName'.ljust(47), 'Tokens', 'UPOS', 'UFeats', 'Lemmas', 'UAS', 'LAS']
+first_column_width = 58
+
+include = ['ModelName'.ljust(first_column_width), 'Tokens', 'UPOS', 'UFeats', 'Lemmas', 'UAS', 'LAS']
 
 # rdir = pathlib.Path('Results/Evaluation_metrics')
 # wdir = pathlib.Path('Results/Evaluation_metrics')
-rdir = pathlib.Path('Results/Evaluation_metrics/voted')
-wdir = pathlib.Path('Results/Evaluation_metrics/voted')
+rdir = pathlib.Path('Results/Evaluation_metrics/prevote')
+wdir = pathlib.Path('Results/Evaluation_metrics/prevote')
 
 with open(wdir/'eval_table.tsv', 'w', newline='') as f:
     tsv_writer = csv.writer(f, delimiter='\t')
@@ -23,7 +25,7 @@ with open(wdir/'eval_table.tsv', 'w', newline='') as f:
         with open(file, 'r') as f:
             print( '_'.join( file.stem.split('_')[0:4] ) )
             # f1s.append( '_'.join( file.stem.split('_')[0:4] ) )
-            f1s.append(file.stem.ljust(47, '.'))
+            f1s.append(file.stem[:first_column_width].ljust(first_column_width, '.'))
             single = list(f)
             pprint(single)
             for row in single:

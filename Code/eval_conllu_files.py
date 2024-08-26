@@ -18,18 +18,18 @@ MM_golds = pathlib.Path("../../Latin-variability/morpho_harmonization/morpho-har
 # Results/conllu_files/*.conllu
 # rdir = pathlib.Path("Results/conllu_files/test_output")
 # rdir = pathlib.Path("Results/conllu_files/vote_circse")
-rdir = pathlib.Path("Results/conllu_files/voted_udtagger-merge")
-wdir = pathlib.Path("Results/Evaluation_metrics/voted")
+# rdir = pathlib.Path("Results/conllu_files/voted_udtagger-merge")
+wdir = pathlib.Path("Results/Evaluation_metrics/prevote")
 
 wdir.mkdir(parents=True, exist_ok=True)
 
-# banks = ['ittb', 'llct', 'perseus', 'proiel', 'udante']
+banks = ['ittb', 'llct', 'perseus', 'proiel', 'udante']
 
-# for bank in banks:
-# rdir = pathlib.Path("Results/conllu_files")/('vote_' + bank)
-# case_sensitive requires Python 3.12!
-# for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
-for conllu_file in rdir.glob('*.conllu'):
+for bank in banks:
+    rdir = pathlib.Path("Results/conllu_files")/('vote_' + bank)
+    # case_sensitive requires Python 3.12!
+    # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
+    for conllu_file in rdir.glob('*.conllu'):
         wfile = (wdir/conllu_file.stem).with_suffix(".md")
         bank = str(conllu_file.stem).split('_')[2]
         # bank = "circse"
