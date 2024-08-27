@@ -7,7 +7,8 @@ golddir=../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks
 mkdir -p $wdir
 
 # for treebank in llct
-for treebank in ITTB Perseus PROIEL UDante
+# for treebank in ITTB Perseus PROIEL UDante
+for treebank in Perseus PROIEL UDante
 do
     py Code/gold-extend.py \
     $rdir/vote_${treebank,,}/MM_Trankit*.conllu \
