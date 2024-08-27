@@ -39,7 +39,7 @@ def vote_feats(feats):
     if feats[0] == "_":
         return feats[0]
     
-    print("Voting individual features!")
+    # print("Voting individual features!")
     # collect all categories and their values (key: category, value: list of values)
     d = {} 
     for feat in feats:
@@ -89,7 +89,7 @@ def main(args):
             feats = [c[FEATS] for c in cols] # gather all features
 
             voted_upos, num_votes = vote_upos(upos)
-            print(f"Voted {voted_upos} from {upos} with popularity {num_votes}")
+            # print(f"Voted {voted_upos} from {upos} with popularity {num_votes}")
 
             # prune features
             # if upos was outvoted, remove its features
@@ -103,7 +103,7 @@ def main(args):
             #    voted_feats = pruned_features[0] # take the first one from pruned features, these are in order of priority
             #else:
             voted_feats = vote_feats(feats)
-            print(f"Voted {voted_feats} from {feats}")
+            # print(f"Voted {voted_feats} from {feats}")
             
             
             cols[0][UPOS] = voted_upos
