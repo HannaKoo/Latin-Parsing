@@ -10,7 +10,8 @@
 
 # Collect and combine corresponding columns from different conllu-files for comparison.
 # - Input files must have same tokenization and other line breaks 
-#   - (FIXME: mwt's differ! What to do? Follow (only) ID's!)
+#   - (FIXME: mwt's differ! What to do? Follow (only) ID's! 
+#     - But ID's also differ when mwt's are present?!)
 #   - (Also some have "# text =" and some don't. Skip # lines.)
 #   - Or prepare files beforehand: feedback.py!
 # Then split FEATS-column on '|'. Then split feats on '=' and make a dict.
