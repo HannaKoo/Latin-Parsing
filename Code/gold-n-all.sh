@@ -6,15 +6,15 @@ golddir=../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks
 
 mkdir -p $wdir
 
-for treebank in llct
-# for treebank in ittb perseus proiel udante
+# for treebank in llct
+for treebank in ITTB Perseus PROIEL UDante
 do
     py Code/gold-extend.py \
-    $rdir/vote_${treebank}/MM_Trankit*.conllu \
-    $rdir/vote_${treebank}/MM_Stanza*.conllu \
-    $rdir/vote_${treebank}/MM_ud*.conllu \
-    --gold ${golddir}/UD_Latin-LLCT/MM-la_$treebank-ud-test.conllu \
+    $rdir/vote_${treebank,,}/MM_Trankit*.conllu \
+    $rdir/vote_${treebank,,}/MM_Stanza*.conllu \
+    $rdir/vote_${treebank,,}/MM_UD*.conllu \
+    --gold ${golddir}/UD_Latin-${treebank}/MM-la_${treebank,,}-ud-test.conllu \
     --output $wdir/${treebank}.hypergold.conllu
 done
 # for others:
-    # $rdir/vote_${treebank}/MM_UD*.conllu \
+    # $rdir/vote_${treebank}/MM_ud*.conllu \

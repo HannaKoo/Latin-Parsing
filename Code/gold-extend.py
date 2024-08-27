@@ -87,7 +87,6 @@ def main(args):
           open(args.gold, 'r', encoding='utf-8') as gold):
         for lines in zip(*files):
             # lines is a list of lines, one from each file
-            print(lines_to_skip)
             if lines_to_skip > 0:
                 lines_to_skip -= 1
                 continue
@@ -100,7 +99,6 @@ def main(args):
                 print(lines[0], file=f)
                 # skip rest of the mwt:
                 start, end = int(cols[0][ID].split("-")[0]), int(cols[0][ID].split("-")[1])
-                print(start, end)
                 lines_to_skip = end - start + 1
                 continue
 
@@ -115,17 +113,14 @@ def main(args):
             
             while True: # Search for the next gold standard line with same FORM as cols[0]
                 goldline = gold.readline()
-                print("goldline", goldline)
                 goldline = goldline.strip()
                 # print(goldline)
                 if not goldline or goldline.startswith("#"):
                     continue
                 goldcols = goldline.split("\t")
-                print("goldcols:", goldcols)
                 if goldcols[FORM] == cols[0][FORM]:
                     break
-                    # BUG: Might search forever or till the end of goldstandard, when mwt in predicted. 
-                    # (Quick solution: Remove mwt's from predicted beforehand.)
+                    # BUG: Will loop forever when Trankit has tokenized 'quo posito' and gold standard has 'quo' and 'posito'. 
 
             cols[0][UPOS] = voted_upos
             cols[0][FEATS] = voted_feats
