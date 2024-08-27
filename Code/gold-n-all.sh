@@ -8,7 +8,7 @@ mkdir -p $wdir
 
 # for treebank in llct
 # for treebank in ITTB Perseus PROIEL UDante
-for treebank in Perseus PROIEL UDante
+for treebank in PROIEL UDante
 do
     py Code/gold-extend.py \
     $rdir/vote_${treebank,,}/MM_Trankit*.conllu \
