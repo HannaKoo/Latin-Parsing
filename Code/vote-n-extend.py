@@ -120,7 +120,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Majority vote')
+    parser = argparse.ArgumentParser(description='Majority vote keeping all uposes')
     parser.add_argument('predicted_files', nargs='+', help='Files to use')
     parser.add_argument('--output', type=str, required=True, help='Output file')
     args = parser.parse_args()
