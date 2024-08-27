@@ -108,8 +108,12 @@ def main(args):
             
             cols[0][UPOS] = voted_upos
             cols[0][FEATS] = voted_feats
-            upos.append(vote_results[num_votes])
-            cols[0][UPOS+1:UPOS+1] = upos  # Insert the whole upos list after the voted upos
+
+            upos = ",".join(upos)
+            # upos.append(vote_results[num_votes])
+            cols[0][UPOS+1:UPOS+1] = [upos, vote_results[num_votes]]  
+            # Insert the whole upos list after the voted upos, and voting result
+            
             print("\t".join(cols[0]), file=f)
 
 
