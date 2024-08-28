@@ -9,7 +9,7 @@ mkdir -p $wdir
 
 # for treebank in LLCT
 # for treebank in ITTB Perseus PROIEL UDante
-for treebank in ITTB Perseus PROIEL
+for treebank in PROIEL UDante
 do
     # Puhti: Run module load python-data to get Python 3.10!
     python Code/gold-extend.py \
