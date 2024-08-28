@@ -117,7 +117,11 @@ def main(args):
             voted_feats = vote_feats(feats)
             # print(f"Voted {voted_feats} from {feats}")
             
-            while True: # Search for the next gold standard line with same FORM as cols[0]
+            maxloop = 100  # We are skipping sentence breaks and mwts, so 100 is probably overkill.
+            for i in range(maxloop):
+            # while True: # Search for the next gold standard line with same FORM as cols[0]
+            # Abort search after maxloop reached. (What will happen if we run into end-of-file first?)
+                place = gold.tell()  # Remember where we start searching in case we have to abort and return
                 goldline = gold.readline()
                 goldline = goldline.strip()
                 # print(goldline)
@@ -126,7 +130,10 @@ def main(args):
                 goldcols = goldline.split("\t")
                 if goldcols[FORM] == cols[0][FORM]:
                     break
-                    # BUG: Will loop forever when Trankit has tokenized 'quo posito' and gold standard has 'quo' and 'posito'. 
+                    # BUG: Will loop forever when Trankit has tokenized 'quo posito' and gold standard has 'quo' and 'posito'. FIXED: by skipping lines with a " " in FORM.
+            else: # no match found
+                gold.seek(place)
+                goldcols[UPOS] = "N/A"
 
             cols[0][UPOS] = voted_upos
             cols[0][FEATS] = voted_feats
