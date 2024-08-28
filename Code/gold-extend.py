@@ -1,3 +1,5 @@
+# Requires Python >= 3.10!
+
 # Try to write gold upos next to the upos vote results.
 # In this crude version it would be enough to skip mwt's.
 # First remove all mwt's, comments, etc. from all input files somewhere else (TM), so the tokenization and lines will match, but then how to modify this to read four files but vote with only three? 
@@ -101,6 +103,10 @@ def main(args):
                 start, end = int(cols[0][ID].split("-")[0]), int(cols[0][ID].split("-")[1])
                 lines_to_skip = end - start + 1
                 continue
+            if " " in cols[0][FORM]: # tokenization has multiple words together, print and skip.
+                print(lines[0], file=f)
+                continue
+
 
             upos = [c[UPOS] for c in cols] # gather all upos's
             feats = [c[FEATS] for c in cols] # gather all features

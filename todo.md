@@ -340,3 +340,79 @@ Run `analyse.py` for Perseus (py for Windows...):
 ```bash
 py Code\analyse.py Results\conllu_files\vote_perseus\MM_Trankit-Mega_perseus_nolinebreaks.conllu Results\conllu_files\vote_perseus\MM_Stanza-Classical_perseus_pretokenized-Trankit_comments-rm_fedback.conllu Results\conllu_files\vote_perseus\MM_UD-custom-classical_perseus_pretokenized-Trankit-mega.conllu --output Results\analyse-perseus.txt
 ```
+
+# Insert predicted and gold UPOSes in voted conllu files for manual comparison
+
+Multi word tokens (mwt) are skipped. The resulting files will only have the mwt header line, without analysis.
+And the mwt sub tokens' analysis will not be there.
+
+`gold-extend.py`, `gold-n-all.sh`
+
+**Problem:** Eternal loop when Trankit has tokenized multiple words in one token, like 'quo posito' in ITTB.
+
+What to do? Skip those lines. Seems to work, **but:**
+
+Perseus: Trankit tokenization has split a word in the middle and made the latter part into an mwt, this again results in looping the gold file eternally!:
+```conllu
+1	Phoebus	Phoebus	PROPN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	_
+2	amat	amo	VERB	v3spia---	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+3	vis	vis	NOUN	n-s---fn-	Case=Nom|Gender=Fem|Number=Sing	2	nsubj	_	_
+4-5	aeque	_	_	_	_	_	_	_	_
+4	ae	ae	ADJ	a-s---fg-	Case=Gen|Gender=Fem|Number=Sing	6	xcomp	_	_
+5	que	que	CCONJ	c--------	_	6	cc	_	_
+6	cupit	cupio	VERB	v3sria---	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	2	conj	_	_
+```
+Gold Standard:
+```conllu
+1	Phoebus	Phoebus	PROPN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	LId=Phoebus1
+2	amat	amo	VERB	v3spia---	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	LId=amo1|TraditionalMood=Indicativus|TraditionalTense=Praesens
+3-4	visaeque	_	_	_	_	_	_	_	LId=que1
+3	visae	video	VERB	v-srppfg-	Aspect=Perf|Case=Gen|Gender=Fem|Number=Sing|VerbForm=Part|Voice=Pass	2	nmod	_	_
+4	que	que	CCONJ	c--------	_	3	cc	_	LId=que1
+5	cupit	cupio	VERB	v3spia---	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	2	conj	_	LId=cupio1|TraditionalMood=Indicativus|TraditionalTense=Praesens
+```
+
+PROIEL:  
+Trankit:
+```
+1	HS	monetary	PROPN	Ne	_	0	root	_	_
+2	C_	c_	CCONJ	Df	_	1	nsubj	_	_
+3	X_X_X_	X_X_X_	X	yy	_	1	nsubj	_	_
+4	I_	i_	CCONJ	C-	_	1	conj	_	_
+5	I_	i_	CCONJ	C-	_	1	conj	_	_
+6	I_	i_	CCONJ	C-	_	1	conj	_	_
+7	I_	i_	CCONJ	Df	_	1	conj	_	_
+8	ZZZ	ZZZ	ADJ	yy	_	1	conj	_	_
+
+1	quid	quis	PRON	Pi	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	0	root	_	_
+```
+Gold:
+```
+6	HS	monetary	ADV	Df	_	5	advmod	_	Ref=1.13.6
+7	C_X_X_X_I_I_I_I_ZZZ	expression	ADJ	Df	_	6	amod	_	Ref=1.13.6
+```
+
+(**Plan B:** Put a maximum on the `while True` loop, but how to get back to the right place in the gold standard? Is there a gold.seek(somewhere) method?)
+
+UDante:  
+Trankit:
+```
+1	Gerardus	Gherardus	PROPN	Sms2n	Case=Nom|Gender=Masc|InflClass=IndEurO|NameType=Giv|Number=Sing	0	root	_	_
+2	de	de	ADP	e	_	3	case	_	_
+3	Brunel	Brunel	PROPN	Propn|n|-|s|-|-|-|n|b|-	Case=Acc|Gender=Masc|InflClass=IndEurX|NameType=Giv|Number=Sing	1	obl	_	_
+4	:	:	PUNCT	Pu	_	7	punct	_	_
+5	Si	si	SCONJ	cs	_	7	mark	_	_
+6	·m	·m	ADV	co	_	7	obj	_	_
+7	sentis	sentio	VERB	va4ips2	Aspect=Imp|InflClass=LatI|Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	13	advcl	_	_
+```
+Gold:
+```
+1	Gerardus	gerardus	PROPN	Sms2n	Case=Nom|Gender=Masc|InflClass=IndEurO|Number=Sing	0	root	_	_
+2	de	de	ADP	e	_	3	case	_	_
+3	Brunel	brunel	PROPN	Si	Foreign=Yes|InflClass=Ind|NameType=Geo	1	flat:name	_	SpaceAfter=No
+4	:	:	PUNCT	Pu	_	5	punct	_	_
+5	Si	si	X	zi	Foreign=Yes	1	orphan	_	SpaceAfter=No
+6	·	·	PUNCT	Pu	_	7	punct	_	SpaceAfter=No
+7	m	m	X	zi	Foreign=Yes	5	flat:foreign	_	_
+8	sentis	sentis	X	zi	Foreign=Yes	5	flat:foreign	_	_
+```
