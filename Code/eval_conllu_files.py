@@ -31,7 +31,7 @@ for bank in banks:
     # for conllu_file in rdir.glob('*.conllu', case_sensitive=False):
     for conllu_file in rdir.glob('*.conllu'):
         wfile = (wdir/conllu_file.stem).with_suffix(".md")
-        bank = str(conllu_file.stem).split('_')[2]
+        # bank = str(conllu_file.stem).split('_')[2]
         # bank = "circse"
         print('bank', bank)
         print("conllu_file", conllu_file)
