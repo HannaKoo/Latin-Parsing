@@ -100,10 +100,10 @@ def main(args):
                 f"Word: {form}\nPredictions: {', '.join(upos)}\nCorrect UPOS: {correct_upos}\n\n"
             )
 
-    with open(wdir/"incorrect_dispersed", 'w', encoding="utf8") as g:
-        pprint(incorrect_dispersed, g)
-    with open(wdir/"most_agreed", 'w', encoding="utf8") as g:
-        pprint(most_agreed, g)
+    # with open(wdir/"incorrect_dispersed", 'w', encoding="utf8") as g:
+    #     pprint(incorrect_dispersed, g)
+    # with open(wdir/"most_agreed", 'w', encoding="utf8") as g:
+    #     pprint(most_agreed, g)
 
     print(f"Analysis complete. Results written to {args.output}")
 
