@@ -14,7 +14,7 @@ def vote_upos(upos):
 
 def analyze_data(upos_votes, total_lines):
     agreed = [tuple(upos) for upos, count in upos_votes if count > 1]  # Includes also cases where one disagrees with the other two.
-    dispersed_groups = [tuple(sorted(upos)) for upos, count in upos_votes if count == 1]
+    dispersed_groups = [tuple(sorted(upos)) for upos, count in upos_votes if count == 1]  # sort to normalize ordering
 
     most_agreed = Counter(agreed).most_common(30)
     most_dispersed = Counter(dispersed_groups).most_common(30)
