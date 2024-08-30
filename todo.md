@@ -483,4 +483,22 @@ Aborting, cols[0][FORM] = '
 Aborting, cols[0][FORM] = m
 Aborting, cols[0][FORM] = '
 Aborting, cols[0][FORM] = ·m
-[kupariha@puhti-login15 Latin-Parsing]$ ```
+[kupariha@puhti-login15 Latin-Parsing]$ 
+```
+
+## regex to find unanimous votes that go right/wrong
+
+All voted the same, and were right:  
+`([A-Z]+)\t[A-Z,]*\tallsame\t\1`
+
+But how to find unanimous votes that go wrong? Can regex grouping backreferences have negation?
+https://www.regular-expressions.info/refadv.html "Negative lookahead".
+
+`([A-Z]+)\t\1,\1,\1\tallsame\t(?!\1)` seems to work.
+https://stackoverflow.com/a/977316
+
+- `([A-Z]+)`: non-empty, `+`, group of capital letters, eg. `ADJ`
+- `\t\1,\1,\1`: a tab and the group repeated three times, separated with commas, eg. `ADJ,ADJ,ADJ`
+- `\tallsame\t`: a tab, `allsame`, and a tab
+- `(?!\1)`: the first group would be `\1`, `(?!)` is negative lookahead.
+
