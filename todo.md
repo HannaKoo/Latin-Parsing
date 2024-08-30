@@ -504,3 +504,11 @@ https://stackoverflow.com/a/977316
 - `\tallsame\t`: a tab, `allsame`, and a tab
 - `(?!\1)`: the first group would be `\1`, `(?!)` is negative lookahead.
 
+
+# perseus and circse voting
+
+Tarkistaa, mikä on paras trankit perseus ufeats ja onko merkitsevän kaukana trankit megawombatti
+
+Circse täytyy saada kolme hyvää tiedostoa äänestykseen, joko uudestaan custom model ajo tai stanza classical ajo uudella trankit proiel pretokenisoinnilla
+
+Vai oliko paras sent segm jollain muulla?
