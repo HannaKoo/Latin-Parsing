@@ -488,6 +488,8 @@ Aborting, cols[0][FORM] = ·m
 
 ## regex to find unanimous votes that go right/wrong
 
+(Tested in Visual Studio Code)
+
 All voted the same, and were right:  
 `([A-Z]+)\t[A-Z,]*\tallsame\t\1`
 
