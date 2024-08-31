@@ -516,13 +516,46 @@ ID | FORM    | LEMMA  | votedUPOS | upos from models | vote-result | votedCorrec
 
 # perseus and circse voting
 
-Tarkistaa, mikä on paras trankit perseus ufeats ja onko merkitsevän kaukana trankit megawombatti
+### CIRCSE
 
-Circse täytyy saada kolme hyvää tiedostoa äänestykseen, joko uudestaan custom model ajo tai stanza classical ajo uudella trankit proiel pretokenisoinnilla
+> Circse täytyy saada kolme hyvää tiedostoa äänestykseen, joko uudestaan custom model ajo tai stanza classical ajo uudella trankit proiel pretokenisoinnilla
+- `Results/conllu_files/vote_circse/MM_Stanza-Classical_circse_pretokenized-Trankit_comments-rm_fedback.conllu`
+- `Results/conllu_files/vote_circse/MM_Trankit-Megawombatti_circse_slurm.conllu`
+- Replace this with a merged model: Results/conllu_files/vote_circse/MM_udtagger-proiel_circse.conllu
+  - -> MM_UD-custom-megawombatti_memory_circse_preto..  
+    `jenna/latin-ud-tagger-code/UD_custom_merged_folder/conllu/MM_UD-custom-megawombatti_memory_circse_pretokenized-Trankit-Classical.conllu`  
+    but We need pretokenization Trankit-Mega
 
-Vai oliko paras sent segm jollain muulla?
+> Vai oliko paras sent segm jollain muulla?
+- MM_Trankit-Classical_circse_slurm 6.55
+- **MM_Trankit-Lame_circse_slurm 6.85 <---** 
+- MM_Trankit-Megawombatti_circse_slurm 6.41
+- MM_udtagger-proiel_circse 6.41
 
-haluamme käyttää Custom Five Merged mallia jäsentää pretokenisoinnilla Trankit Five Merged CIRCSE
+Mutta UFeats vain 55.32:  
+`MM_Trankit-Lame_circse_slurm...................	99.76	82.97	55.32`  
+vs:  
+`MM_Trankit-Megawombatti_circse_slurm...........	99.82	83.21	57.76`  
 
-tämän lisäksi tuli käyttää Stanzaa (Stanza Classicalia) ja custom modelia mallin Perseus Trankit Classical pretonenisoilla, nyt siellä on kaiketi Trankit megawombatti käytettynä
+> haluamme käyttää Custom Five Merged mallia jäsentää pretokenisoinnilla Trankit Five Merged CIRCSE
+
+> Entä UFeats?
+- `MM_UD-custom-megawombatti_memory_circse_preto..	99.71	81.30	57.11`
+- `MM_UD-custom-megawombatti_memory_circse_pretokenized-Trankit-Classical` (koko nimi)
+- (`MM_UD-custom-lasla_circse_pretokenized-Tranki..	99.71	92.04	72.44` <-- lasla includes some circse?)
+
+```
+ModelName                                      	Tokens	UPOS	UFeats	Lemmas	UAS	LAS  
+MM_Stanza-PROIEL-stanza_circse.................	100.00	84.46	59.48	72.37	48.18	41.38  
+MM_Stanza-classical_slurm_circse...............	100.00	84.37	56.79	73.36	49.64	43.03  
+MM_Stanza-Classical_circse_pretokenized-Trankit	99.82	84.47	56.85	73.21	50.22	44.04  
+MM_Stanza-megawombatti_slurm_circse............	99.98	82.56	51.23	78.00	47.00	40.14
+```
+**Siis:** Paras on Trankit-Lame tokenisointi, ja UFeats: (Trankit-mega, Stanza-proiel, udtagger-mega), mutta Stanza-mega paljon parempi lemmoissa.
+
+### Perseus
+
+> Tarkistaa, mikä on paras trankit perseus ufeats ja onko merkitsevän kaukana trankit megawombatti
+
+> tämän lisäksi tuli käyttää Stanzaa (Stanza Classicalia) ja custom modelia mallin Perseus Trankit Classical pretonenisoilla, nyt siellä on kaiketi Trankit megawombatti käytettynä
 
