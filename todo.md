@@ -504,6 +504,15 @@ https://stackoverflow.com/a/977316
 - `\tallsame\t`: a tab, `allsame`, and a tab
 - `(?!\1)`: the first group would be `\1`, `(?!)` is negative lookahead.
 
+## Write an extra column in the hyper conllus
+
+to help less computer savvy researchers search the files.
+
+Should be next to the allsame column for easy searching:
+
+ID | FORM    | LEMMA  | votedUPOS | upos from models | vote-result | votedCorrect? | goldUPOS
+---|---------|--------|-----------|------------------|-------------|---------------|----------
+3  | puellam | puella | ADJ       | ADJ,ADJ,ADJ      | allsame     | thatswrong    | NOUN
 
 # perseus and circse voting
 
@@ -512,3 +521,8 @@ Tarkistaa, mikä on paras trankit perseus ufeats ja onko merkitsevän kaukana tr
 Circse täytyy saada kolme hyvää tiedostoa äänestykseen, joko uudestaan custom model ajo tai stanza classical ajo uudella trankit proiel pretokenisoinnilla
 
 Vai oliko paras sent segm jollain muulla?
+
+haluamme käyttää Custom Five Merged mallia jäsentää pretokenisoinnilla Trankit Five Merged CIRCSE
+
+tämän lisäksi tuli käyttää Stanzaa (Stanza Classicalia) ja custom modelia mallin Perseus Trankit Classical pretonenisoilla, nyt siellä on kaiketi Trankit megawombatti käytettynä
+
