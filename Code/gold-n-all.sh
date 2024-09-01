@@ -3,16 +3,18 @@
 rdir=Results/conllu_files
 wdir=Results/conllu_files/gold_extended
 # golddir=../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks
-golddir=../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks  # puhti
 
 mkdir -p $wdir
 
 # Puhti: Run module load python-data to get Python 3.10!
+
 for treebank in CIRCSE ITTB LLCT Perseus PROIEL UDante
 do
 
-    MM=MM-
+    golddir=../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks  # puhti
+    MM="MM-"
     UD=UD
+
     if [ $treebank == LLCT ]
     then
         UD=ud  # LLCT udtagger file name has 'ud' instead of 'UD'
@@ -31,5 +33,6 @@ do
     --gold ${golddir}/UD_Latin-${treebank}/${MM}la_${treebank,,}-ud-test.conllu \
     --output $wdir/${treebank}.hypergold.conllu
 done
-
+### Gold files:
 # UD_Latin-CIRCSE/la_circse-ud-test.conllu
+# Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-ITTB/MM-la_ittb-ud-test.conllu

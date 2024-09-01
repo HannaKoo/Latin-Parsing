@@ -516,6 +516,78 @@ ID | FORM    | LEMMA  | votedUPOS | upos from models | vote-result | votedCorrec
 ---|---------|--------|-----------|------------------|-------------|---------------|----------
 3  | puellam | puella | ADJ       | ADJ,ADJ,ADJ      | allsame     | thatswrong    | NOUN
 
+```bash
+[kupariha@puhti-login11 Latin-Parsing]$ Code/gold-n-all.sh 
+['Results/conllu_files/vote_circse/MM_Trankit-Megawombatti_circse_slurm.conllu', 'Results/conllu_files/vote_circse/MM_Stanza-PROIEL_circse_pretokenized-TrankitMega_comments-rm_fedback.conllu', 'Results/conllu_files/vote_circse/MM_UD-custom-megawombatti_memory_circse_pretokenized-Trankit-Mega.conllu']
+../../UD_Latin-CIRCSE/la_circse-ud-test.conllu
+Aborting, cols[0][FORM] = illa
+Aborting, cols[0][FORM] = cessiti
+['Results/conllu_files/vote_ittb/MM_Trankit-Mega_ittb_nolinebreaks.conllu', 'Results/conllu_files/vote_ittb/MM_Stanza-ITTB_ittb_pretokenized-Trankit_comments-rm_fedback.conllu', 'Results/conllu_files/vote_ittb/MM_UD-custom-lamechrist_ittb_pretokenized-Trankit-mega.conllu']
+../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-ITTB/MM-la_ittb-ud-test.conllu
+['Results/conllu_files/vote_llct/MM_Trankit-Mega_llct_nolinebreaks.conllu', 'Results/conllu_files/vote_llct/MM_Stanza-LLCT_llct_pretokenized-Trankit_comments-rm_fedback.conllu', 'Results/conllu_files/vote_llct/MM_udtagger_llct_pretokenized-Trankit-Mega.conllu']
+../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-LLCT/MM-la_llct-ud-test.conllu
+['Results/conllu_files/vote_perseus/MM_Trankit-Mega_perseus_nolinebreaks.conllu', 'Results/conllu_files/vote_perseus/MM_Stanza-Classical_perseus_pretokenized-Trankit_comments-rm_fedback.conllu', 'Results/conllu_files/vote_perseus/MM_UD-custom-classical_perseus_pretokenized-Trankit-mega.conllu']
+../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-Perseus/MM-la_perseus-ud-test.conllu
+Aborting, cols[0][FORM] = vis
+Aborting, cols[0][FORM] = caldice
+Aborting, cols[0][FORM] = rebrius
+Aborting, cols[0][FORM] = cumadmiratione
+Aborting, cols[0][FORM] = ne
+Aborting, cols[0][FORM] = copinum
+['Results/conllu_files/vote_proiel/MM_Trankit-Mega_proiel_nolinebreaks.conllu', 'Results/conllu_files/vote_proiel/MM_Stanza-PROIEL_proiel_pretokenized-Trankit_comments-rm_fedback.conllu', 'Results/conllu_files/vote_proiel/MM_UD-custom-megawombatti_memory_proiel_pretokenized-Trankit-mega.conllu']
+../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-PROIEL/MM-la_proiel-ud-test.conllu
+Aborting, cols[0][FORM] = C_
+Aborting, cols[0][FORM] = X_X_X_
+Aborting, cols[0][FORM] = I_
+Aborting, cols[0][FORM] = I_
+Aborting, cols[0][FORM] = I_
+Aborting, cols[0][FORM] = I_
+Aborting, cols[0][FORM] = ZZZ
+Aborting, cols[0][FORM] = ante
+Aborting, cols[0][FORM] = cessiones
+['Results/conllu_files/vote_udante/MM_Trankit-Mega_udante_nolinebreaks.conllu', 'Results/conllu_files/vote_udante/MM_Stanza-UDante_udante_pretokenized-Trankit_comments-rm_fedback.conllu', 'Results/conllu_files/vote_udante/MM_UD-custom-megawombatti_memory_udante_pretokenized-Trankit-mega.conllu']
+../../Latin-variability/morpho_harmonization/morpho-harmonized-treebanks/UD_Latin-UDante/MM-la_udante-ud-test.conllu
+Aborting, cols[0][FORM] = ·m
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = n
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = l
+Aborting, cols[0][FORM] = 'aigua
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = t
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = o
+Aborting, cols[0][FORM] = velle
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = l
+Aborting, cols[0][FORM] = ch
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = L
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = fa·l
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = l
+Aborting, cols[0][FORM] = 'aigua
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = 'ombra
+Aborting, cols[0][FORM] = ch
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = d
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = ch
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = m
+Aborting, cols[0][FORM] = '
+Aborting, cols[0][FORM] = ·m
+[kupariha@puhti-login11 Latin-Parsing]$ 
+```
+
+
 ### Count allsames and yesrights using grep
 
 ```bash
