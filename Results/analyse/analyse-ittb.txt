@@ -1,0 +1,42 @@
+Most Agreed UPOS Tags (with counts and percentages):
+('NOUN', 'NOUN', 'NOUN'): 5289 (17.68%)
+('PUNCT', 'PUNCT', 'PUNCT'): 4278 (14.30%)
+('VERB', 'VERB', 'VERB'): 3922 (13.11%)
+('ADP', 'ADP', 'ADP'): 2398 (8.02%)
+('DET', 'DET', 'DET'): 2063 (6.90%)
+('AUX', 'AUX', 'AUX'): 1796 (6.00%)
+('PART', 'PART', 'PART'): 1741 (5.82%)
+('PRON', 'PRON', 'PRON'): 1690 (5.65%)
+('ADJ', 'ADJ', 'ADJ'): 1684 (5.63%)
+('ADV', 'ADV', 'ADV'): 1665 (5.57%)
+('SCONJ', 'SCONJ', 'SCONJ'): 1497 (5.00%)
+('CCONJ', 'CCONJ', 'CCONJ'): 1084 (3.62%)
+('NUM', 'NUM', 'NUM'): 214 (0.72%)
+('NOUN', 'ADJ', 'ADJ'): 44 (0.15%)
+('PROPN', 'PROPN', 'PROPN'): 44 (0.15%)
+('NOUN', 'ADJ', 'NOUN'): 24 (0.08%)
+('VERB', 'VERB', 'ADJ'): 24 (0.08%)
+('VERB', 'NOUN', 'VERB'): 21 (0.07%)
+('ADJ', 'ADJ', 'NOUN'): 18 (0.06%)
+('PRON', 'SCONJ', 'PRON'): 17 (0.06%)
+('NOUN', 'NOUN', 'ADJ'): 17 (0.06%)
+('ADV', 'SCONJ', 'ADV'): 16 (0.05%)
+('ADJ', 'NOUN', 'ADJ'): 16 (0.05%)
+('SCONJ', 'PRON', 'SCONJ'): 14 (0.05%)
+('ADJ', 'VERB', 'ADJ'): 13 (0.04%)
+('ADV', 'CCONJ', 'CCONJ'): 12 (0.04%)
+('NOUN', 'NOUN', 'AUX'): 11 (0.04%)
+('VERB', 'VERB', 'NOUN'): 10 (0.03%)
+('ADV', 'SCONJ', 'SCONJ'): 10 (0.03%)
+('PRON', 'PRON', 'DET'): 9 (0.03%)
+Proportion of Most Agreed UPOS Tags: 99.07%
+
+Most Dispersed UPOS Tags (with counts and percentages):
+ADJ, NOUN, VERB: 3 (0.01%)
+DET, NOUN, VERB: 1 (0.00%)
+ADJ, AUX, VERB: 1 (0.00%)
+ADJ, NOUN, PROPN: 1 (0.00%)
+ADP, NOUN, PROPN: 1 (0.00%)
+Proportion of Most Dispersed UPOS Tags: 0.02%
+
+Cases where predictions are dispersed and incorrect:

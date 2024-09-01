@@ -576,6 +576,18 @@ cd Results/conllu_files/
 python3 ../../Code/vote.py vote_circse/MM_Trankit* vote_circse/MM_Stanza* vote_circse/MM_UD* --output voted_udtagger-merge/MM_voted_circse.conllu
 ```
 
+#### oracle.py
+
+> python oracle.py ../Results/conllu_files/vote_udante/MM_Trankit-Mega_udante_nolinebreaks.conllu ../Results/conllu_files/vote_udante/MM_Stanza-UDante_udante_pretokenized-Trankit_comments-rm_fedback.conllu ../Results/conllu_files/vote_udante/MM_UD-custom-megawombatti_memory_udante_pretokenized-Trankit-mega.conllu --gold latin-treebank-data/MM-la_udante-ud-test.conllu --output udante.oracle.conllu
+
+```bash
+Latin-Parsing>$ python3 Code/oracle.py Results/conllu_files/vote_circse/MM_Trankit-Megawombatti_circse_slurm.conllu Results/conllu_files/vote_circse/MM_Stanza-PROIEL_circse_pretokenized-TrankitMega_comments-rm_fedback.conllu Results/conllu_files/vote_circse/MM_UD-custom-megawombatti_memory_circse_pretokenized-Trankit-Mega.conllu --gold ../../UD_Latin-CIRCSE/la_circse-ud-test.conllu --output Results/conllu_files/oracle/circse.oracle.conllu
+```
+
+> python conll18_ud_eval.py latin-treebank-data/MM-la_udante-ud-test.conllu udante.oracle.conllu -v
+
+
+
 ### Perseus
 
 > Tarkistaa, mikä on paras trankit perseus ufeats ja onko merkitsevän kaukana trankit megawombatti
