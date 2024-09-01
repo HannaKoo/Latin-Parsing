@@ -1,11 +1,11 @@
 # Requires Python >= 3.10!
 
-# Try to write gold upos next to the upos vote results.
-# In this crude version it would be enough to skip mwt's.
-# First remove all mwt's, comments, etc. from all input files somewhere else (TM), so the tokenization and lines will match, but then how to modify this to read four files but vote with only three? 
-
+# Write gold upos next to the upos vote results.
+# In this crude version we decided it is enough to skip mwt's.
+# (First remove all mwt's, comments, etc. from all input files somewhere else (TM), so the tokenization and lines will match, but then how to modify this to read four files but vote with only three?)
 # Or
 # Read from the gold standard until we find the same word. Then pick UPOS from there.
+# ----------------------------------------------------------------------------------
 
 import argparse
 import sys
@@ -16,14 +16,14 @@ ID, FORM, LEMMA, UPOS, XPOS, FEATS, HEAD, DEPREL, DEPS, MISC = range(10)
 vote_results = {1: 'evenvote', 2: 'two2one', 3:'allsame'}
 
 def vote_upos(upos):
-    # upos is a lsit of upos tags
+    # upos is a list of upos tags
     c = Counter(upos)
     k, v = c.most_common(1)[0] # count them, and take the most common
     if v > 1: # if most common appears more than once, take it...
         return k, v
     else:
         return upos[0], v # ...otherwise take the first one (files are in order of priority)
-    
+
 def vote_whole_feats(feats):
     # try if you have two to one voting using complete feature strings
     c = Counter(feats)
@@ -32,7 +32,7 @@ def vote_whole_feats(feats):
         return k
     else:
         return None # if not return None
-    
+
 def vote_feats(feats):
     # feats is a list of feature analyses from different parsers (pruned to only contain the ones with the same upos tag)
     # len(feats) is at least 3
@@ -47,7 +47,7 @@ def vote_feats(feats):
     # if the first one is "_", we can just return it (no categories to do the voting)
     if feats[0] == "_":
         return feats[0]
-    
+
     # print("Voting individual features!")
     # collect all categories and their values (key: category, value: list of values)
     d = {} 
@@ -121,7 +121,7 @@ def main(args):
             maxloop = 100  # We are skipping sentence breaks and mwts, so 100 is probably overkill.
             for i in range(maxloop):
             # while True: # Search for the next gold standard line with same FORM as cols[0]
-            # Abort search after maxloop reached. (What will happen if we run into end-of-file first?)
+                # Abort search after maxloop reached. (What will happen if we run into end-of-file first?)
                 goldline = gold.readline()
                 goldline = goldline.strip()
                 # print(goldline)
@@ -130,7 +130,9 @@ def main(args):
                 goldcols = goldline.split("\t")
                 if goldcols[FORM] == cols[0][FORM]:
                     break
-                    # BUG: Will loop forever when Trankit has tokenized 'quo posito' and gold standard has 'quo' and 'posito'. FIXED: by skipping lines with a " " in FORM.
+                    # BUG: Will loop forever when Trankit has tokenized 'quo posito' 
+                    # and gold standard has 'quo' and 'posito'. FIXED: by skipping lines 
+                    # with a " " in FORM.
             else: # no match found
                 print("Aborting, cols[0][FORM] =", cols[0][FORM])
                 gold.seek(place)
@@ -139,9 +141,14 @@ def main(args):
             cols[0][UPOS] = voted_upos
             cols[0][FEATS] = voted_feats
 
+            if voted_upos == goldcols[UPOS]:
+                iscorrect = "yesright"
+            else:
+                iscorrect = "thatswrong"
+
             upos = ",".join(upos)
             # upos.append(vote_results[num_votes])
-            cols[0][UPOS+1:UPOS+1] = [upos, vote_results[num_votes], goldcols[UPOS]]  
+            cols[0][UPOS+1:UPOS+1] = [upos, vote_results[num_votes], iscorrect, goldcols[UPOS]]
             # Insert the whole upos list after the voted upos, and voting result
             
             print("\t".join(cols[0]), file=f)
@@ -150,7 +157,6 @@ def main(args):
     # Done!
 
 
- 
 
 
 if __name__ == '__main__':

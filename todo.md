@@ -516,6 +516,15 @@ ID | FORM    | LEMMA  | votedUPOS | upos from models | vote-result | votedCorrec
 ---|---------|--------|-----------|------------------|-------------|---------------|----------
 3  | puellam | puella | ADJ       | ADJ,ADJ,ADJ      | allsame     | thatswrong    | NOUN
 
+### Count allsames and yesrights using grep
+
+```bash
+[kupariha@puhti-login11 gold_extended]$ grep $'allsame\tyesright' PROIEL.hypergold.conllu | wc
+  13295  186130 1434539
+[kupariha@puhti-login11 gold_extended]$ grep $'allsame\tyesright' PROIEL.hypergold.conllu | wc -l
+13295
+```
+
 # perseus and circse voting
 
 ### CIRCSE
