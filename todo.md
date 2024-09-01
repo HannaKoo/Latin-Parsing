@@ -551,7 +551,17 @@ MM_Stanza-classical_slurm_circse...............	100.00	84.37	56.79	73.36	49.64	4
 MM_Stanza-Classical_circse_pretokenized-Trankit	99.82	84.47	56.85	73.21	50.22	44.04  
 MM_Stanza-megawombatti_slurm_circse............	99.98	82.56	51.23	78.00	47.00	40.14
 ```
-**Siis:** Paras on Trankit-Lame tokenisointi, ja UFeats: (Trankit-mega, Stanza-proiel, udtagger-mega), mutta Stanza-mega paljon parempi lemmoissa.
+**Siis:** Paras on Trankit-Lame tokenisointi, ja UFeats: (**Trankit-mega, Stanza-proiel, udtagger-mega**), mutta Stanza-mega paljon parempi lemmoissa, mutta niistä ei äänestetä. Ei nyt ruveta säätämään tokenisoinnin kanssa, pidetään **Trankit mega tokenisointi**.
+
+
+
+#### Vote circse
+
+```bash
+cd Results/conllu_files/
+# mkdir voted_udtagger-merge
+python3 ../../Code/vote.py vote_circse/MM_Trankit* vote_circse/MM_Stanza* vote_circse/MM_UD* --output voted_udtagger-merge/MM_voted_circse.conllu
+```
 
 ### Perseus
 
