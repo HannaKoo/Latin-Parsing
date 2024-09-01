@@ -25,6 +25,7 @@ for st_file in rdir.glob('*_comments-rm.conllu'):
     bank = st_file.stem.split('_')[2]
     print("Now doing:", bank)
     tr_filename = pathlib.Path("MM_Trankit-Mega_" + bank + "_nolinebreaks.conllu")
+    # tr_filename = pathlib.Path("MM_Trankit-Megawombatti_" + bank + "_slurm.conllu")  #CIRCSE
     tr_file = conlluroot/("vote_" + bank)/tr_filename
     wfilename = pathlib.Path(st_file.stem + "_fedback.conllu")
     wfile = wdirroot/("vote_" + bank)/wfilename

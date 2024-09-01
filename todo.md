@@ -281,7 +281,9 @@ at least when:
 
 ### Find all mwt with:
 
-`\n[0-9]*-[0-9]`
+`\n[0-9]*-[0-9]`  
+or  
+`^[0-9]*-`
 
 
 ## CIRCSE
@@ -552,6 +554,17 @@ MM_Stanza-Classical_circse_pretokenized-Trankit	99.82	84.47	56.85	73.21	50.22	44
 MM_Stanza-megawombatti_slurm_circse............	99.98	82.56	51.23	78.00	47.00	40.14
 ```
 **Siis:** Paras on Trankit-Lame tokenisointi, ja UFeats: (**Trankit-mega, Stanza-proiel, udtagger-mega**), mutta Stanza-mega paljon parempi lemmoissa, mutta niistä ei äänestetä. Ei nyt ruveta säätämään tokenisoinnin kanssa, pidetään **Trankit mega tokenisointi**.
+
+1. Run Stanza-PROIEL on circse pretokenized by Trankit-mega
+1. Remove `#`-lines:
+
+```
+^#.*
+(Ctrl-Enter)
+```
+replace with nothing. 4398(?, iirc) replacements.
+
+3. `feedback.py`
 
 
 
