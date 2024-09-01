@@ -38,6 +38,7 @@ for bank in banks:
         print('wfile', wfile)
         # for gold_subdir in MM_golds.glob('*' + bank, case_sensitive=False):
         for gold_subdir in MM_golds.iterdir():
+        # for gold_subdir in (MM_golds/"..").iterdir():  # CIRCSE
             print(gold_subdir)
             if str(gold_subdir).lower().endswith(bank):
                 # Should match only one dir, is there a smart way to do this?
