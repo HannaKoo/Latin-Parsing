@@ -2,8 +2,6 @@
 
 # Combine Evaluation_metrics into one big table.
 
-# Only use F1 score (column 3 from 0)
-
 import pathlib
 from pprint import pprint
 import csv
@@ -11,6 +9,9 @@ import csv
 first_column_width = 58
 
 include = ['ModelName'.ljust(first_column_width), 'Tokens', 'UPOS', 'UFeats', 'Lemmas', 'UAS', 'LAS']
+
+# Only use F1 score (column 3, zero-based)
+f1column = 3
 
 # rdir = pathlib.Path('Results/Evaluation_metrics')
 # wdir = pathlib.Path('Results/Evaluation_metrics')
@@ -32,6 +33,6 @@ with open(wdir/'eval_table.tsv', 'w', newline='') as f:
                 row = row.split('|')
                 if row[0].strip() in include:
                     head = row[0]
-                    f1 = row[3].strip()
+                    f1 = row[f1column].strip()
                     f1s.append(f1)
         tsv_writer.writerow(f1s)
